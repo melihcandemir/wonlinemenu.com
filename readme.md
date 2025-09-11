@@ -1,4 +1,4 @@
-# 🍽️ WOnlineMenu.com - Dijital Menü Sistemi
+# 🍽️ wonlinemenu.com - Dijital Menü Sistemi
 
 > Modern restoran ve kafeler için geliştirilmiş dijital menü yönetim sistemi bilgi sitesi.
 
@@ -10,7 +10,7 @@
 
 ## 📋 Proje Hakkında
 
-WonlineMenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
+wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 
 ## ✨ Özellikler
 

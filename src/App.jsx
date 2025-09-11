@@ -4,7 +4,7 @@ import RouterConfig from "./config/routerConfig";
 function App() {
   return (
     <>
-      <Theme />
+      {/* <Theme /> */}
       <RouterConfig />
     </>
   );
