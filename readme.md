@@ -51,11 +51,11 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] React Router DOM entegrasyonu
 - [+] TailwindCSS kurulumu ve yapılandırması
 - [+] Tema sistemi (Dark/Light mod) implementasyonu
+- [+] Githubda projeyi canlıya al
 
 ### 🔄 Devam Eden Görevler
 
 - [ ] Ana sayfa tasarımı
-- [ ] Githubda projeyi canlıya al
 
 ### 📋 Yapılacaklar
 
