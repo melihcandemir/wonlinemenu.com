@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import wonlineLogo from "../assets/wonline2023.png";
 
 export default function Navbar() {
