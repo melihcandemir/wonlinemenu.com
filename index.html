@@ -9,7 +9,27 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>wonlinemmenu.com</title>
-    <script type="module" crossorigin src="/wonlinemenu.com/assets/index-Cm58vbBF.js"></script>
+    <!--  -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <!--  -->
+    <script type="module" crossorigin src="/wonlinemenu.com/assets/index-3gM_u35a.js"></script>
     <link rel="stylesheet" crossorigin href="/wonlinemenu.com/assets/index-CM_pgz1C.css">
   </head>
   <body>
