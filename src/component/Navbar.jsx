@@ -1,7 +1,8 @@
 import { useState } from "react";
 import wonlineLogo from "../assets/wonline2023.png";
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const { isVisible } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Menü açma/kapama fonksiyonu
@@ -10,7 +11,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed md:top-16 left-0 w-full bg-white shadow-md z-40">
+    <div
+      className={`sticky transition-all duration-500 ease-in-out ${
+        !isVisible ? "top-0" : "top-24"
+      } left-0 w-full bg-white shadow-md z-40`}
+    >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
