@@ -12,9 +12,9 @@ export default function Navbar(props) {
 
   return (
     <div
-      className={`sticky transition-all duration-500 ease-in-out ${
-        !isVisible ? "top-0" : "top-24"
-      } left-0 w-full bg-white shadow-md z-40`}
+      className={`sticky transition-all ${
+        !isVisible ? "top-0" : "top-18"
+      } left-0 w-full bg-white z-40`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -30,7 +30,7 @@ export default function Navbar(props) {
           </div>
 
           {/* Desktop Menü */}
-          <div className="hidden md:flex flex-row justify-center items-center gap-3 mr-8">
+          <div className="hidden md:flex flex-row justify-center items-center gap-8 mr-8">
             <a
               href="#"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
