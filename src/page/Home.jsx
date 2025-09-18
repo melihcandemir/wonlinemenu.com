@@ -44,10 +44,12 @@ export default function Home() {
       <Communication isVisible={isVisible} />
       <Navbar isVisible={isVisible} />
       {/* İçerik alanı için padding-top ekliyoruz ki fixed elementler altındaki içerik görünür olsun */}
-      <div className="pt-20 md:pt-24">
-        <div className="container mx-auto px-4 py-8">
+      <div className="pt-16 md:pt-24">
+        <div className="container mx-auto py-4 px-4 md:py-8">
           <SectionOne />
-          <SectionTwo />
+          <div className="my-8 md:my-24">
+            <SectionTwo />
+          </div>
         </div>
       </div>
     </div>

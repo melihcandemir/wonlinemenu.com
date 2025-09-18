@@ -14,12 +14,12 @@ export default function Navbar(props) {
     <div
       className={`sticky transition-all ${
         !isVisible ? "top-0" : "top-18"
-      } left-0 w-full bg-white z-40`}
+      } left-0 w-full md:max-w-7xl bg-white z-40`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="ml-2 md:ml-8">
+          <div>
             <a href="#">
               <img
                 className="h-12 md:h-20"
@@ -30,7 +30,7 @@ export default function Navbar(props) {
           </div>
 
           {/* Desktop Menü */}
-          <div className="hidden md:flex flex-row justify-center items-center gap-8 mr-8">
+          <div className="hidden md:flex flex-row justify-center items-center gap-8">
             <a
               href="#"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
@@ -58,7 +58,7 @@ export default function Navbar(props) {
           </div>
 
           {/* Hamburger Menü Butonu (Mobil) */}
-          <div className="md:hidden mr-2">
+          <div className="md:hidden mr-2 hover">
             <button
               onClick={toggleMenu}
               className="text-gray-900 focus:outline-none focus:text-green-600"
