@@ -3,6 +3,7 @@ import Communication from "../component/Communication";
 import Navbar from "../component/Navbar";
 import SectionOne from "../component/SectionOne";
 import SectionTwo from "../component/SectionTwo";
+import SectionThree from "../component/SectionThree";
 
 export default function Home() {
   //
@@ -44,11 +45,14 @@ export default function Home() {
       <Communication isVisible={isVisible} />
       <Navbar isVisible={isVisible} />
       {/* İçerik alanı için padding-top ekliyoruz ki fixed elementler altındaki içerik görünür olsun */}
-      <div className="pt-16 md:pt-24">
+      <div className="pt-5 md:pt-24">
         <div className="container mx-auto py-4 px-4 md:py-8">
           <SectionOne />
           <div className="my-8 md:my-24">
             <SectionTwo />
+          </div>
+          <div className="my-8 md:my-24">
+            <SectionThree />
           </div>
         </div>
       </div>
