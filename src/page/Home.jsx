@@ -5,6 +5,7 @@ import SectionOne from "../component/SectionOne";
 import SectionTwo from "../component/SectionTwo";
 import SectionThree from "../component/SectionThree";
 import SectionFour from "../component/SectionFour";
+import SectionFive from "../component/SectionFive";
 
 export default function Home() {
   //
@@ -63,6 +64,10 @@ export default function Home() {
         <div className="space-y-8 md:space-y-12 lg:space-y-16">
           <SectionFour />
         </div>
+      </div>
+
+      <div className="mt-8 md:mt-12 lg:mt-16">
+        <SectionFive />
       </div>
     </>
   );
