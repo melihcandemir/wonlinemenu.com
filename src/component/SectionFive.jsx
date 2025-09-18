@@ -6,7 +6,10 @@ export default function SectionFive() {
           <h1 className="text-5xl font-bold text-white">
             Fiyat ve daha fazla bilgi almak için bizimle iletişime geçin.
           </h1>
-          <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full">
+          <button
+            onClick={() => window.open("https://wa.me/905409505454", "_blank")}
+            className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full"
+          >
             Sipariş ver
           </button>
         </div>
