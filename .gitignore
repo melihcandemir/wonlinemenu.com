@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 
 # zip dosyası çok büyük
-assets/*.zip
+src/assets/*.zip
