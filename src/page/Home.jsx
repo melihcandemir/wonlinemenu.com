@@ -41,21 +41,22 @@ export default function Home() {
   }, [isMobile]);
 
   return (
-    <div className="flex flex-col w-full md:max-w-7xl mx-auto">
+    <>
       <Communication isVisible={isVisible} />
       <Navbar isVisible={isVisible} />
-      {/* İçerik alanı için padding-top ekliyoruz ki fixed elementler altındaki içerik görünür olsun */}
-      <div className="pt-5 md:pt-24">
-        <div className="container mx-auto py-4 px-4 md:py-8">
+
+      {/* Ana içerik container'ı - sayfa ortasında ve responsive */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-25 lg:px-8">
+        <div className="space-y-8 md:space-y-12 lg:space-y-16">
           <SectionOne />
-          <div className="my-8 md:my-24">
-            <SectionTwo />
-          </div>
-          <div className="my-8 md:my-24">
-            <SectionThree />
-          </div>
+          <SectionTwo />
         </div>
       </div>
-    </div>
+
+      {/* SectionThree kendi arka planı ile tam genişlikte */}
+      <div className="mt-8 md:mt-12 lg:mt-16">
+        <SectionThree />
+      </div>
+    </>
   );
 }

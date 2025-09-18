@@ -8,8 +8,8 @@ export default function Communication(props) {
   }
 
   return (
-    <div className="transition-all fixed top-0 w-full md:max-w-7xl bg-white z-50 hidden md:block">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between border-b-1 border-gray-300 pb-4">
+    <div className="transition-all fixed top-0 w-full bg-white z-50 hidden md:block">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between border-b-1 border-gray-300 pb-4">
         <div className="flex items-center space-x-2">
           <span className="text-gray-700 font-bold">WhatsApp:</span>
           <a
