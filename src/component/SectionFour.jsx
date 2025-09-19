@@ -1,15 +1,9 @@
 import img from "../assets/wonlinescreen-2.png";
-import zipFile from "../assets/wonline11082025.zip";
 
 export default function SectionFour() {
-  // Zip dosyasını indirme fonksiyonu
+  // İndirme fonksiyonu - şu anda devre dışı
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = zipFile;
-    link.download = "wonline11082025.zip";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    alert("İndirme linki yakında eklenecek!");
   };
   return (
     <div className="flex flex-col md:flex-row items-center md:space-x-8">

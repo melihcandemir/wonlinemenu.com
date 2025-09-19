@@ -6,6 +6,7 @@ import SectionTwo from "../component/SectionTwo";
 import SectionThree from "../component/SectionThree";
 import SectionFour from "../component/SectionFour";
 import SectionFive from "../component/SectionFive";
+import SectionSix from "../component/SectionSix";
 
 export default function Home() {
   //
@@ -68,6 +69,12 @@ export default function Home() {
 
       <div className="mt-8 md:mt-12 lg:mt-16">
         <SectionFive />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-25 lg:px-8">
+        <div className="space-y-8 md:space-y-12 lg:space-y-16">
+          <SectionSix />
+        </div>
       </div>
     </>
   );
