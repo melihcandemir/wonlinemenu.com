@@ -1,0 +1,72 @@
+import { useState } from "react";
+
+// SVG ikonu için ayrı bir bileşen oluşturmak kodu daha temiz hale getirir.
+const AccordionIcon = ({ isOpen }) => (
+  <svg
+    data-accordion-icon
+    className={`w-3 h-3 shrink-0 transition-transform duration-200 ${
+      isOpen ? "rotate-180" : ""
+    }`}
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 10 6"
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round" // HTML'deki "stroke-linecap" React'te camelCase olur
+      strokeLinejoin="round" // "stroke-linejoin" -> camelCase
+      strokeWidth="2" // "stroke-width" -> camelCase
+      d="M9 5 5 1 1 5"
+    />
+  </svg>
+);
+
+const Accordion = ({ items }) => {
+  // Hangi akordeon öğesinin açık olduğunu tutmak için state kullanıyoruz.
+  // Başlangıçta ilk öğe açık olsun diye 0 değerini veriyoruz.
+  // Hiçbiri açık olmasın isterseniz `null` yapabilirsiniz.
+  const [openIndex, setOpenIndex] = useState(0);
+
+  // Bir başlığa tıklandığında çalışacak fonksiyon
+  const handleToggle = (index) => {
+    // Eğer zaten açık olan başlığa tıklanırsa kapat, değilse yenisini aç.
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div id="accordion-collapse" data-accordion="collapse">
+      {items.map((item, index) => {
+        const isOpen = openIndex === index;
+
+        return (
+          <div key={index}>
+            <h2 id={`accordion-collapse-heading-${index}`}>
+              <button
+                type="button"
+                className="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-gray-200 gap-3"
+                onClick={() => handleToggle(index)}
+                aria-expanded={isOpen}
+                aria-controls={`accordion-collapse-body-${index}`}
+              >
+                <span>{item.title}</span>
+                <AccordionIcon isOpen={isOpen} />
+              </button>
+            </h2>
+            <div
+              id={`accordion-collapse-body-${index}`}
+              className={isOpen ? "" : "hidden"}
+              aria-labelledby={`accordion-collapse-heading-${index}`}
+            >
+              <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                {item.content}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Accordion;
