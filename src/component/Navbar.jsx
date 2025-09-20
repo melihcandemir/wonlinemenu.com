@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import wonlineLogo from "../assets/wonline2023.png";
 
 export default function Navbar(props) {
@@ -31,18 +32,18 @@ export default function Navbar(props) {
 
           {/* Desktop Menü */}
           <div className="hidden md:flex flex-row justify-center items-center gap-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               ANASAYFA
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/test-et"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               TEST ET
-            </a>
+            </Link>
             <a
               href="#"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
