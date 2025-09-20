@@ -12,11 +12,11 @@ export default function SectionSix() {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
           Aklınıza bir şey mi takıldı ?
         </h1>
-        <img src={img} alt="reklam07" />
+        <img src={img} alt="reklam07" className="mb-5 md:mb-0" />
       </div>
       <div className="w-full lg:w-1/2">
         <Accordion items={accordionItems} />
-        <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 md:mt-10 w-full">
+        <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 md:mt-10 w-full">
           Diğer sorular ve cevaplar için tıklayın.
         </button>
       </div>
