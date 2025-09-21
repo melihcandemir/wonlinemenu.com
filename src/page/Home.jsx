@@ -9,41 +9,8 @@ import SectionFive from "../component/SectionFive";
 import SectionSix from "../component/SectionSix";
 import Footer from "../component/Footer";
 
-export default function Home() {
-  //
-  const [isVisible, setIsVisible] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Mobil görünüm kontrolü için
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px'in altı mobil olarak kabul edilir
-    };
-
-    // Scroll kontrolü için
-    const handleScroll = () => {
-      if (window.scrollY > 50 || isMobile) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-    };
-
-    // Olay dinleyicilerini ekle
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-
-    // Bileşen ilk yüklendiğinde kontrol et
-    handleResize();
-    handleScroll();
-
-    // Bileşen kaldırıldığında olay dinleyicilerini temizle
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
-
+export default function Home(props) {
+  const { showScrollTop, scrollToTop, isVisible } = props;
   return (
     <>
       <Communication isVisible={isVisible} />
@@ -72,11 +39,33 @@ export default function Home() {
         <SectionFive />
       </div>
 
-      <div className="max-w-7xl mx-auto sm:px-6 md:pt-18">
+      <div className="max-w-7xl mx-auto p-6 mb-8 md:mb-0 md:pt-18">
         <SectionSix />
       </div>
 
       <Footer />
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+          aria-label="Yukarı çık"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
+      )}
     </>
   );
 }

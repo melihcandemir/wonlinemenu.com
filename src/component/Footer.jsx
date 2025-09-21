@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import img from "../assets/wonline_new_alt.png";
 export default function Footer() {
   return (
     <footer className="w-full bg-stone-700 py-20">
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8">
         {/* Sol Sütun: Logo ve Açıklama */}
-        <div>
+        <a href="/">
           <div className="cursor-pointer">
             <img src={img} alt="logo" />
           </div>
@@ -12,7 +13,7 @@ export default function Footer() {
             Wonlinemenu WhatsApp üzerinden düzenli bir sipariş alımı sağlayan
             sistemdir.
           </p>
-        </div>
+        </a>
 
         {/* Orta Sütun: İletişim */}
         <div className="space-y-4 text-white md:px-20">
