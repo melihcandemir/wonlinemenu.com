@@ -8,7 +8,7 @@ export default function SectionFive() {
           </h1>
           <button
             onClick={() => window.open("https://wa.me/905409505454", "_blank")}
-            className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-2xl px-5 py-2.5 me-2 md:mt-10 w-full"
+            className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-2xl px-5 py-2.5 me-2 md:mt-10 w-full cursor-pointer"
           >
             Sipariş ver
           </button>

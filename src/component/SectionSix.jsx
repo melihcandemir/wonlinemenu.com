@@ -1,4 +1,5 @@
 import img from "../assets/reklam07.png";
+import { Link } from "react-router-dom";
 import Accordion from "./Accordion";
 import { accordionItems } from "./data";
 
@@ -16,9 +17,11 @@ export default function SectionSix() {
       </div>
       <div className="w-full lg:w-1/2">
         <Accordion items={accordionItems} />
-        <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 md:mt-10 w-full">
-          Diğer sorular ve cevaplar için tıklayın.
-        </button>
+        <Link to="destek">
+          <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 md:mt-10 w-full cursor-pointer">
+            Diğer sorular ve cevaplar için tıklayın.
+          </button>
+        </Link>
       </div>
     </div>
   );

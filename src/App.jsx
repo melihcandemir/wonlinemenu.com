@@ -1,10 +1,8 @@
-import Theme from "./component/Theme";
-import RouterConfig from "./config/routerConfig";
+import RouterConfig from "./config/RouterConfig";
 
 function App() {
   return (
     <>
-      {/* <Theme /> */}
       <RouterConfig />
     </>
   );

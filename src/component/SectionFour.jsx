@@ -35,7 +35,7 @@ export default function SectionFour() {
         </p>
         <button
           onClick={handleDownload}
-          className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full"
+          className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full cursor-pointer"
         >
           İndir
         </button>

@@ -72,13 +72,11 @@ export default function Home() {
         <SectionFive />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-18 lg:px-8">
+      <div className="max-w-7xl mx-auto sm:px-6 md:pt-18">
         <SectionSix />
       </div>
 
-      <div className="mt-8 md:mt-12 lg:mt-16">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

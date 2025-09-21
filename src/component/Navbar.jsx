@@ -21,13 +21,13 @@ export default function Navbar(props) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div>
-            <a href="#">
+            <Link to="/">
               <img
                 className="h-12 md:h-20"
                 src={wonlineLogo}
                 alt="wonlinemenu"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menü */}
@@ -44,18 +44,18 @@ export default function Navbar(props) {
             >
               TEST ET
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/fiyatlandirma"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               FIYATLANDIRMA
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="destek"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               DESTEK
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger Menü Butonu (Mobil) */}
@@ -95,34 +95,34 @@ export default function Navbar(props) {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-3 pt-4">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 ANASAYFA
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/test-et"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 TEST ET
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/fiyatlandirma"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 FIYATLANDIRMA
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="destek"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 DESTEK
-              </a>
+              </Link>
             </div>
           </div>
         )}
