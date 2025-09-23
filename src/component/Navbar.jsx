@@ -11,6 +11,13 @@ export default function Navbar(props) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       className={`sticky transition-all ${
@@ -21,7 +28,7 @@ export default function Navbar(props) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div>
-            <Link to="/">
+            <Link to="/" onClick={scrollToTop}>
               <img
                 className="h-12 md:h-20"
                 src={wonlineLogo}
@@ -33,24 +40,28 @@ export default function Navbar(props) {
           {/* Desktop Menü */}
           <div className="hidden md:flex flex-row justify-center items-center gap-8">
             <Link
+              onClick={scrollToTop}
               to="/"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               ANASAYFA
             </Link>
             <Link
+              onClick={scrollToTop}
               to="/test-et"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               TEST ET
             </Link>
             <Link
+              onClick={scrollToTop}
               to="/fiyatlandirma"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               FIYATLANDIRMA
             </Link>
             <Link
+              onClick={scrollToTop}
               to="destek"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
@@ -98,28 +109,40 @@ export default function Navbar(props) {
               <Link
                 to="/"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 ANASAYFA
               </Link>
               <Link
                 to="/test-et"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 TEST ET
               </Link>
               <Link
                 to="/fiyatlandirma"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 FIYATLANDIRMA
               </Link>
               <Link
                 to="destek"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 DESTEK
               </Link>

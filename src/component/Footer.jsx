@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import img from "../assets/wonline_new_alt.png";
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="w-full bg-stone-700 py-20">
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8">
         {/* Sol Sütun: Logo ve Açıklama */}
         <div>
-          <Link className="cursor-pointer" to="/">
+          <Link className="cursor-pointer" to="/" onClick={scrollToTop}>
             <img src={img} alt="logo" />
           </Link>
           <p className="text-white max-w-sm">
@@ -82,6 +88,7 @@ export default function Footer() {
           <ul>
             <li>
               <Link
+                onClick={scrollToTop}
                 to="/"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
@@ -91,6 +98,7 @@ export default function Footer() {
 
             <li>
               <Link
+                onClick={scrollToTop}
                 to="/test-et"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
@@ -99,6 +107,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
+                onClick={scrollToTop}
                 to="/fiyatlandirma"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
@@ -107,12 +116,19 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link className="flex items-center hover:text-green-600 transition-colors">
+              <Link
+                onClick={scrollToTop}
+                className="flex items-center hover:text-green-600 transition-colors"
+              >
                 <span className="text-green-600 text-2xl mr-1">•</span>DESTEK
               </Link>
             </li>
             <li>
-              <Link className="flex items-center hover:text-green-600 transition-colors">
+              <Link
+                onClick={scrollToTop}
+                to="/referanslar"
+                className="flex items-center hover:text-green-600 transition-colors"
+              >
                 <span className="text-green-600 text-2xl mr-1">•</span>
                 REFERANSLAR
               </Link>
