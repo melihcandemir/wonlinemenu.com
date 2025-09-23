@@ -358,3 +358,62 @@ export const referanslar = [
     referans: "urfakebaphauseschweiler.de",
   },
 ];
+
+export const suportAccordionItems = [
+  {
+    title: "Wonlinemenu nedir?",
+    content: (
+      <p className="mb-2 text-gray-500 dark:text-gray-400">
+        Wonlinemenu (WhatsApp Online Menu), işletmeler için Whatsapp üzerinden
+        sipariş alabileceğiniz kolay e-ticaret yazılımıdır. kolaylıkla
+        ürünlerinizi ekleyebilir ve sipariş alabilirsiniz.
+      </p>
+    ),
+  },
+  {
+    title: "Nasıl kullanabilirim?",
+    content: (
+      <p className="mb-2 text-gray-500 dark:text-gray-400">
+        Wonlinemenu, Abonelik sistemi ile hizmet vermektedir. Yıllık periyotta
+        ödeme yaparak kullanmaya başlabilirsiniz. Bizimle iletişim kurarak daha
+        fazla detaylı bilgi alabilirsiniz.
+      </p>
+    ),
+  },
+  {
+    title: "Ödemeleri nasıl alacağız?",
+    content: (
+      <>
+        <p className="mb-2 text-gray-500 dark:text-gray-400">
+          Wonlinemenu üzerinden online ödeme alabilirsiniz. Kontrol panelinden
+          Ödeme yöntemleri belirleyerek müşterilerinize kolaylıklar
+          sağlıyabilirsiniz.
+        </p>
+        <p className="mb-2 text-gray-500 dark:text-gray-400">
+          Örnek : Kapıda Nakit Ödeme, Kapıda Kredi Kartı, Ticket Restaurant,
+          Sodexo, Multinet, Setcard, Winwin, Metropol, Havale & EFT, Payconiq,
+          Papara gibi..
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "ALPEMIX 7/24 destek alın.",
+    content: (
+      <>
+        <p className="mb-2 text-gray-500 dark:text-gray-400">
+          ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz Servis
+          yazılımıdır.
+        </p>
+        <button className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg">
+          Şimdi indir
+        </button>
+        <p className="mb-2 text-gray-500 dark:text-gray-400">
+          Görsel olarak kurulum anlatımı :<br />
+          Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak devam
+          edim.
+        </p>
+      </>
+    ),
+  },
+];

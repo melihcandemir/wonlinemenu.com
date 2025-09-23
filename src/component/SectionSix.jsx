@@ -17,7 +17,7 @@ export default function SectionSix() {
       </div>
       <div className="w-full lg:w-1/2">
         <Accordion items={accordionItems} />
-        <Link to="destek">
+        <Link to="/destek">
           <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 md:mt-10 w-full cursor-pointer">
             Diğer sorular ve cevaplar için tıklayın.
           </button>

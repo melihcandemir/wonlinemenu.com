@@ -6,6 +6,7 @@ import TestEt from "../page/TestEt";
 import { useEffect, useState } from "react";
 import Pricing from "../page/Pricing";
 import Referanslar from "../page/Referanslar";
+import Support from "../page/Support";
 
 export default function RouterConfig() {
   //
@@ -54,6 +55,7 @@ export default function RouterConfig() {
         path="/referanslar"
         element={<Referanslar isVisible={isVisible} />}
       />
+      <Route path="/destek" element={<Support isVisible={isVisible} />} />
       <Route path="/admin54" element={<Admin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

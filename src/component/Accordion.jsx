@@ -58,7 +58,7 @@ const Accordion = ({ items }) => {
               className={isOpen ? "" : "hidden"}
               aria-labelledby={`accordion-collapse-heading-${index}`}
             >
-              <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <div className="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                 {item.content}
               </div>
             </div>

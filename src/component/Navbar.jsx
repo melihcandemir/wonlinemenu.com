@@ -62,7 +62,7 @@ export default function Navbar(props) {
             </Link>
             <Link
               onClick={scrollToTop}
-              to="destek"
+              to="/destek"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
               DESTEK
@@ -137,7 +137,7 @@ export default function Navbar(props) {
                 FIYATLANDIRMA
               </Link>
               <Link
-                to="destek"
+                to="/destek"
                 className="text-sm font-medium text-gray-900 active:text-green-600 py-2 px-4 rounded transition-colors"
                 onClick={() => {
                   setIsMenuOpen(false);

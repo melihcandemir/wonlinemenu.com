@@ -36,7 +36,7 @@ export default function NotFoundPage() {
             ← Geri Dön
           </button>
           <button
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = "/#")}
             className="w-full sm:w-auto px-6 py-3 bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200"
           >
             🏠 Ana Sayfa
