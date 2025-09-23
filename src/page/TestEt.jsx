@@ -1,8 +1,26 @@
-export default function TestEt() {
+import Communication from "../component/Communication";
+import Footer from "../component/Footer";
+import Navbar from "../component/Navbar";
+import ReferansSection from "../component/ReferansSection";
+import ScrollTotop from "../component/ScrollTotop";
+import TestSection from "../component/TestSection";
+
+export default function TestEt(props) {
+  const { isVisible } = props;
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Test Et</h1>
+    <>
       {/* Test Et sayfası içeriği */}
-    </div>
+      <Communication isVisible={isVisible} />
+      <Navbar isVisible={isVisible} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-25 lg:px-8">
+        <TestSection />
+        <hr className="border border-gray-300" />
+        <ReferansSection />
+      </div>
+
+      <Footer />
+      <ScrollTotop />
+    </>
   );
 }

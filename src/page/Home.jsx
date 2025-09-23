@@ -39,7 +39,7 @@ export default function Home(props) {
         <SectionFive />
       </div>
 
-      <div className="max-w-7xl mx-auto p-6 mb-8 md:mb-0 md:pt-18">
+      <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-0 md:pt-18">
         <SectionSix />
       </div>
 

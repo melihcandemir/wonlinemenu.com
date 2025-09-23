@@ -43,7 +43,7 @@ export default function RouterConfig() {
   return (
     <Routes>
       <Route path="/" element={<Home isVisible={isVisible} />} />
-      <Route path="/test-et" element={<TestEt />} />
+      <Route path="/test-et" element={<TestEt isVisible={isVisible} />} />
       <Route path="/admin54" element={<Admin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

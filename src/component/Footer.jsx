@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full bg-stone-700 py-20">
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8">
         {/* Sol Sütun: Logo ve Açıklama */}
-        <a href="/">
+        <Link to="/">
           <div className="cursor-pointer">
             <img src={img} alt="logo" />
           </div>
@@ -13,7 +13,7 @@ export default function Footer() {
             Wonlinemenu WhatsApp üzerinden düzenli bir sipariş alımı sağlayan
             sistemdir.
           </p>
-        </a>
+        </Link>
 
         {/* Orta Sütun: İletişim */}
         <div className="space-y-4 text-white md:px-20">
@@ -81,54 +81,35 @@ export default function Footer() {
           <h3 className="text-xl font-bold text-green-600 pb-2">Sayfalar</h3>
           <ul>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
                 <span className="text-green-600 text-2xl mr-1">•</span>ANASAYFA
-              </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link className="flex items-center hover:text-green-600 transition-colors">
+                <span className="text-green-600 text-2xl mr-1">•</span>TEST ET
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-green-600 transition-colors"
-              >
-                <span className="text-green-600 text-2xl mr-1">•</span>BAYİ
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-green-600 transition-colors"
-              >
+              <Link className="flex items-center hover:text-green-600 transition-colors">
                 <span className="text-green-600 text-2xl mr-1">•</span>DESTEK
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-green-600 transition-colors"
-              >
+              <Link className="flex items-center hover:text-green-600 transition-colors">
                 <span className="text-green-600 text-2xl mr-1">•</span>
                 FİYATLANDIRMA
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-green-600 transition-colors"
-              >
+              <Link className="flex items-center hover:text-green-600 transition-colors">
                 <span className="text-green-600 text-2xl mr-1">•</span>
                 REFERANSLAR
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-green-600 transition-colors"
-              >
-                <span className="text-green-600 text-2xl mr-1">•</span>W/Garson
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
