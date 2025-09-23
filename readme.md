@@ -53,13 +53,13 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Tema sistemi (Dark/Light mod) implementasyonu
 - [+] Githubda projeyi canlıya al
 - [+] Ana sayfa tasarımı
+- [+] Test Et sayfa tasarımı
+- [+] Fiyatlandırma sayfa tasarımı
 
 ### 🔄 Devam Eden Görevler
 
-- [ ] Test Et sayfa tasarımı
+- [ ] Destek sayfa tasarımı
 
 ### 📋 Yapılacaklar
 
-- [ ] Fiyatlandırma sayfa tasarımı
-- [ ] Destek sayfa tasarımı
 - [ ] Admin paneli temel yapısı

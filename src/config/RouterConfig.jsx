@@ -4,6 +4,7 @@ import Admin from "../page/Admin";
 import NotFoundPage from "../page/NotFoundPage";
 import TestEt from "../page/TestEt";
 import { useEffect, useState } from "react";
+import Pricing from "../page/Pricing";
 
 export default function RouterConfig() {
   //
@@ -44,6 +45,10 @@ export default function RouterConfig() {
     <Routes>
       <Route path="/" element={<Home isVisible={isVisible} />} />
       <Route path="/test-et" element={<TestEt isVisible={isVisible} />} />
+      <Route
+        path="/fiyatlandirma"
+        element={<Pricing isVisible={isVisible} />}
+      />
       <Route path="/admin54" element={<Admin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -5,15 +5,15 @@ export default function Footer() {
     <footer className="w-full bg-stone-700 py-20">
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8">
         {/* Sol Sütun: Logo ve Açıklama */}
-        <Link to="/">
-          <div className="cursor-pointer">
+        <div>
+          <Link className="cursor-pointer" to="/">
             <img src={img} alt="logo" />
-          </div>
+          </Link>
           <p className="text-white max-w-sm">
             Wonlinemenu WhatsApp üzerinden düzenli bir sipariş alımı sağlayan
             sistemdir.
           </p>
-        </Link>
+        </div>
 
         {/* Orta Sütun: İletişim */}
         <div className="space-y-4 text-white md:px-20">
@@ -90,19 +90,25 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link className="flex items-center hover:text-green-600 transition-colors">
+              <Link
+                to="/test-et"
+                className="flex items-center hover:text-green-600 transition-colors"
+              >
                 <span className="text-green-600 text-2xl mr-1">•</span>TEST ET
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/fiyatlandirma"
+                className="flex items-center hover:text-green-600 transition-colors"
+              >
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                FİYATLANDIRMA
               </Link>
             </li>
             <li>
               <Link className="flex items-center hover:text-green-600 transition-colors">
                 <span className="text-green-600 text-2xl mr-1">•</span>DESTEK
-              </Link>
-            </li>
-            <li>
-              <Link className="flex items-center hover:text-green-600 transition-colors">
-                <span className="text-green-600 text-2xl mr-1">•</span>
-                FİYATLANDIRMA
               </Link>
             </li>
             <li>
