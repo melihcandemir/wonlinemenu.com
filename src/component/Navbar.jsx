@@ -58,7 +58,7 @@ export default function Navbar(props) {
               to="/fiyatlandirma"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
-              FIYATLANDIRMA
+              FİYATLANDIRMA
             </Link>
             <Link
               onClick={scrollToTop}
@@ -134,7 +134,7 @@ export default function Navbar(props) {
                   scrollToTop();
                 }}
               >
-                FIYATLANDIRMA
+                FİYATLANDIRMA
               </Link>
               <Link
                 to="/destek"

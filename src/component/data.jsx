@@ -430,9 +430,12 @@ export const suportAccordionItems = [
           ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz Servis
           yazılımıdır.
         </p>
-        <p className="cursor-pointer font-medium text-green-600 hover:underline mb-2">
+        <a
+          href="https://www.alpemix.com/site/AlpemixService.exe"
+          className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
+        >
           Şimdi indir
-        </p>
+        </a>
         <p className="mb-2">
           Görsel olarak kurulum anlatımı :<br />
           Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak devam

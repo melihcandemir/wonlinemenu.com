@@ -8,6 +8,7 @@ import SectionFive from "../component/SectionFive";
 import SectionSix from "../component/SectionSix";
 import Footer from "../component/Footer";
 import ScrollTotop from "../component/ScrollTotop";
+import Theme from "../component/Theme";
 
 export default function Home(props) {
   const { isVisible } = props;
@@ -44,7 +45,7 @@ export default function Home(props) {
       </div>
 
       <Footer />
-
+      {/* <Theme /> */}
       <ScrollTotop />
     </>
   );

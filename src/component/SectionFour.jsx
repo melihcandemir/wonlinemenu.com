@@ -1,10 +1,6 @@
 import img from "../assets/wonlinescreen-2.png";
 
 export default function SectionFour() {
-  // İndirme fonksiyonu - şu anda devre dışı
-  const handleDownload = () => {
-    alert("İndirme linki yakında eklenecek!");
-  };
   return (
     <div className="flex flex-col md:flex-row items-center md:space-x-8">
       <div className="flex-shrink-0 mb-6 w-full lg:mb-0 lg:w-1/2">
@@ -33,12 +29,11 @@ export default function SectionFour() {
         <p className="text-gray-800 italic mt-4">
           “Yalnızca wonlinemenu sipariş sistemini kullananlar içindir.”
         </p>
-        <button
-          onClick={handleDownload}
-          className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full cursor-pointer"
-        >
-          İndir
-        </button>
+        <a href="https://wonline.menu/wonline11082025.zip">
+          <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-5 w-full cursor-pointer">
+            İndir
+          </button>
+        </a>
       </div>
     </div>
   );
