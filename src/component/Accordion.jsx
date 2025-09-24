@@ -53,7 +53,7 @@ const Accordion = ({ items }) => {
                 aria-expanded={isOpen}
                 aria-controls={`accordion-collapse-body-${index}`}
               >
-                <span>{item.title}</span>
+                <span className="flex-1 text-left">{item.title}</span>
                 <AccordionIcon isOpen={isOpen} />
               </button>
             </h2>

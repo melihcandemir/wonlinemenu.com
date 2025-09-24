@@ -118,6 +118,7 @@ export default function Footer() {
             <li>
               <Link
                 onClick={scrollToTop}
+                to="/destek"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
                 <span className="text-green-600 text-2xl mr-1">•</span>DESTEK
