@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NotFoundPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center px-4">
@@ -35,12 +37,12 @@ export default function NotFoundPage() {
           >
             ← Geri Dön
           </button>
-          <button
-            onClick={() => (window.location.href = "/#")}
+          <Link
+            to="/"
             className="w-full sm:w-auto px-6 py-3 bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200"
           >
             🏠 Ana Sayfa
-          </button>
+          </Link>
         </div>
 
         {/* Alt Bilgi */}
