@@ -44,7 +44,11 @@ const Accordion = ({ items }) => {
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
-                className="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-gray-200 gap-3"
+                className={`flex items-center justify-between w-full p-5 font-medium border border-gray-200 gap-3 ${
+                  isOpen
+                    ? "bg-gray-300 text-gray-900" // Açık olduğunda eklenecek sınıflar
+                    : "text-gray-500" // Kapalı olduğunda eklenecek sınıf
+                }`}
                 onClick={() => handleToggle(index)}
                 aria-expanded={isOpen}
                 aria-controls={`accordion-collapse-body-${index}`}
@@ -58,7 +62,11 @@ const Accordion = ({ items }) => {
               className={isOpen ? "" : "hidden"}
               aria-labelledby={`accordion-collapse-heading-${index}`}
             >
-              <div className="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <div
+                className={`p-5 border border-gray-200 ${
+                  isOpen ? "bg-gray-200 text-gray-800" : ""
+                }`}
+              >
                 {item.content}
               </div>
             </div>

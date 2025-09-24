@@ -56,10 +56,9 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Test Et sayfa tasarımı
 - [+] Fiyatlandırma sayfa tasarımı
 - [+] Referanslar sayfa tasarımı
+- [+] Destek sayfa tasarımı
 
 ### 🔄 Devam Eden Görevler
-
-- [ ] Destek sayfa tasarımı
 
 ### 📋 Yapılacaklar
 

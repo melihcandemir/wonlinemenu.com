@@ -4,6 +4,12 @@ import Accordion from "./Accordion";
 import { accordionItems } from "./data";
 
 export default function SectionSix() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="flex flex-col md:flex-row items-center md:space-x-8">
       <div className="lg:w-1/2 text-center md:text-left">
@@ -17,7 +23,7 @@ export default function SectionSix() {
       </div>
       <div className="w-full lg:w-1/2">
         <Accordion items={accordionItems} />
-        <Link to="/destek">
+        <Link to="/destek" onClick={scrollToTop}>
           <button className="text-white bg-green-600 focus:outline-none hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 md:mt-10 w-full cursor-pointer">
             Diğer sorular ve cevaplar için tıklayın.
           </button>
