@@ -6,7 +6,7 @@ export default function PricingCard() {
       {/* Değişiklik: flex, flex-col ve w-full eklendi. Kartın kendisi dikey flex container oldu. */}
       <div className="flex flex-col w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden font-sans mb-6 md:mb-0">
         {/* Üst Kısım (Değişiklik yok) */}
-        <div className="bg-stone-700 text-white text-center p-5">
+        <div className="bg-[#2c2a29] text-white text-center p-5">
           <h2 className="text-3xl font-bold">Wonline EKO</h2>
           <p className="text-white mt-2">Kurulum + 1 Yıl kullanım.</p>
           <div className="my-6">
@@ -54,7 +54,7 @@ export default function PricingCard() {
       {/* Değişiklik: flex, flex-col ve w-full eklendi. */}
       <div className="flex flex-col w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden font-sans">
         {/* Üst Kısım (Değişiklik yok) */}
-        <div className="bg-stone-700 text-white text-center p-5">
+        <div className="bg-[#2c2a29] text-white text-center p-5">
           <h2 className="text-3xl font-bold">Wonline PLUS</h2>
           <p className="text-white mt-2">Kurulum + 1 Yıl kullanım.</p>
           <div className="my-6">

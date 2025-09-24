@@ -39,7 +39,10 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 
 ### Diğer Komutlar
 
-- **Production build:** `npm run build`
+- **Projeyi tekrar yükledikten sonra** `npm install`
+- **Projeyi localde çaıştırmak için** `npm run dev`
+- **Production build** `npm run build`
+- **Projeyi github canlıda çalıştırmak için** `npm run deploy`
 - **Lint kontrolü:** `npm run lint`
 - **Preview:** `npm run preview`
 
@@ -57,9 +60,20 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Fiyatlandırma sayfa tasarımı
 - [+] Referanslar sayfa tasarımı
 - [+] Destek sayfa tasarımı
+- [+] Footer renk ayarı
+- [+] Footer güncelleme yapılacak.
 
 ### 🔄 Devam Eden Görevler
+
+- [ ] Gerekli güncellemeler
 
 ### 📋 Yapılacaklar
 
 - [ ] Admin paneli temel yapısı
+- [ ] Destek panelinde bulunan fotoğraflar popup ile açılsın.
+- [ ] Ana sayfa font düzenlemesi.
+- [ ] Google yorumları ekle.
+- [ ] Bayi sayfası ekle, şifreli olacak.
+- [ ] Garson sayfası ekle.
+- [ ] Translate ekle.
+- [ ] Uygulama indirme butonlarına uygulamarı ekle.

@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
 import img from "../assets/wonline_new_alt.png";
+
 export default function Footer() {
+  //
+  const currentYear = new Date().getFullYear();
+  //
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
-    <footer className="w-full bg-stone-700 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8">
+    <footer className="w-full bg-[#2c2a29] py-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto px-4 lg:px-8 gap-8 mt-6">
         {/* Sol Sütun: Logo ve Açıklama */}
         <div>
           <Link className="cursor-pointer" to="/" onClick={scrollToTop}>
@@ -136,6 +141,15 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="border-t border-gray-200 mt-8 max-w-7xl mx-auto">
+        <p className="text-white text-sm mt-3 px-4">
+          © {currentYear}{" "}
+          <Link to="/" onClick={scrollToTop} className="text-green-600">
+            WonlineMenu
+          </Link>
+          . Tüm hakları saklıdır.
+        </p>
       </div>
     </footer>
   );
