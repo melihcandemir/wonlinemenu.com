@@ -63,6 +63,7 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Footer renk ayarı
 - [+] Footer güncelleme yapılacak.
 - [+] Uygulama indirme butonlarına uygulamarı ekle.
+- [+] Garson sayfası ekle.
 
 ### 🔄 Devam Eden Görevler
 
@@ -75,6 +76,5 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [ ] Ana sayfa font düzenlemesi.
 - [ ] Google yorumları ekle.
 - [ ] Bayi sayfası ekle, şifreli olacak.
-- [ ] Garson sayfası ekle.
 - [ ] Translate ekle.
 - [ ] Dark mode ekle.

@@ -48,7 +48,7 @@ export default function WGarsonSection() {
       </div>
       {/*  */}
       <div className="w-full">
-        <img src={img} alt="1" className="w-80 mx-auto" />
+        <img src={img} alt="1" className="w-70 mx-auto" />
         <Accordion items={wGarson} />
       </div>
     </>
