@@ -66,6 +66,8 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Garson sayfası ekle.
 - [+] Bayi sayfası ekle, şifreli olacak.
 - [+] Ana sayfa font düzenlemesi.
+- [+] Videolar küçük kalsın.
+- [+] Destek panelinde bulunan fotoğraflar popup ile açılsın.
 
 ### 🔄 Devam Eden Görevler
 
@@ -74,7 +76,6 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 ### 📋 Yapılacaklar
 
 - [ ] Admin paneli temel yapısı
-- [ ] Destek panelinde bulunan fotoğraflar popup ile açılsın.
 - [ ] Google yorumları ekle.
 - [ ] Translate ekle.
 - [ ] Dark mode ekle.

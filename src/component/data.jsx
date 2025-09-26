@@ -22,6 +22,8 @@ import imgMa2 from "../assets/support/IMG-20250515-WA0030-370x370.jpg";
 import imgMa3 from "../assets/support/Screenshot_35-370x370.png";
 import imgMa4 from "../assets/support/meftun_qr_masa-370x370.png";
 import imgMa5 from "../assets/support/wonlineTafel-370x370.jpg";
+import { useState } from "react";
+import ImageModal from "./ImageModal";
 
 export const accordionItems = [
   {
@@ -472,9 +474,9 @@ export const suportAccordionItems = [
         {/*  */}
         <hr className="mt-2" />
         <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden">
+        <div className="w-75 rounded-lg overflow-hidden">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -504,44 +506,101 @@ export const suportAccordionItems = [
       </>
     ),
   },
+  // {
+  //   title: "Müşteriler bize nasıl ulaşacaklar?",
+  //   content: (
+  //     <>
+  //       <p className="mb-2">
+  //         Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
+  //         müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
+  //         edebilir, sipariş vermelerini sağlayabilirsiniz veya aşağıda bulunan
+  //         örnekler gibi sizlere el ilanları hazırlayabiliriz.
+  //       </p>
+  //       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+  //         <img src={imgM1} alt="1" />
+  //         <img src={imgM2} alt="2" />
+  //         <img src={imgM3} alt="3" />
+  //         <img src={imgM4} alt="4" />
+  //         <img src={imgM5} alt="5" />
+  //         <img src={imgM6} alt="6" />
+  //         <img src={imgM7} alt="7" />
+  //         <img src={imgM8} alt="8" />
+  //         <img src={imgM9} alt="9" />
+  //         <img src={imgM10} alt="10" />
+  //         <img src={imgM11} alt="11" />
+  //         <img src={imgM12} alt="12" />
+  //         <img src={imgM13} alt="13" />
+  //         <img src={imgM14} alt="14" />
+  //         <img src={imgM15} alt="15" />
+  //       </div>
+  //     </>
+  //   ),
+  // },
   {
     title: "Müşteriler bize nasıl ulaşacaklar?",
-    content: (
-      <>
-        <p className="mb-2">
-          Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
-          müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
-          edebilir, sipariş vermelerini sağlayabilirsiniz veya aşağıda bulunan
-          örnekler gibi sizlere el ilanları hazırlayabiliriz.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-          <img src={imgM1} alt="1" />
-          <img src={imgM2} alt="2" />
-          <img src={imgM3} alt="3" />
-          <img src={imgM4} alt="4" />
-          <img src={imgM5} alt="5" />
-          <img src={imgM6} alt="6" />
-          <img src={imgM7} alt="7" />
-          <img src={imgM8} alt="8" />
-          <img src={imgM9} alt="9" />
-          <img src={imgM10} alt="10" />
-          <img src={imgM11} alt="11" />
-          <img src={imgM12} alt="12" />
-          <img src={imgM13} alt="13" />
-          <img src={imgM14} alt="14" />
-          <img src={imgM15} alt="15" />
-        </div>
-      </>
-    ),
+    content: (() => {
+      // Component içinde state kullanabilmek için function component yaklaşımı
+      function ImageGrid() {
+        const [selectedImage, setSelectedImage] = useState(null);
+
+        const images = [
+          { src: imgM1, alt: "1" },
+          { src: imgM2, alt: "2" },
+          { src: imgM3, alt: "3" },
+          { src: imgM4, alt: "4" },
+          { src: imgM5, alt: "5" },
+          { src: imgM6, alt: "6" },
+          { src: imgM7, alt: "7" },
+          { src: imgM8, alt: "8" },
+          { src: imgM9, alt: "9" },
+          { src: imgM10, alt: "10" },
+          { src: imgM11, alt: "11" },
+          { src: imgM12, alt: "12" },
+          { src: imgM13, alt: "13" },
+          { src: imgM14, alt: "14" },
+          { src: imgM15, alt: "15" },
+        ];
+
+        return (
+          <>
+            <p className="mb-2">
+              Mağazanız için belirleyeceğiniz size özel linki veya QR
+              kodlarınızı müşterilerinizle paylaşarak, müşterilerinizi
+              mağazanızdan haberdar edebilir, sipariş vermelerini
+              sağlayabilirsiniz veya aşağıda bulunan örnekler gibi sizlere el
+              ilanları hazırlayabiliriz.
+            </p>
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  className="cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setSelectedImage(image.src)}
+                />
+              ))}
+            </div>
+            <ImageModal
+              isOpen={!!selectedImage}
+              onClose={() => setSelectedImage(null)}
+              imageSrc={selectedImage}
+            />
+          </>
+        );
+      }
+
+      return <ImageGrid />;
+    })(),
   },
   {
     title: "Ürün / Fiyat güncelleme",
     content: (
       <>
         <p>Bu videoda Ürün ekleme ve Düzenlemeyi görüntüleyebilirsiniz.</p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/sbP_Km6hW2w?si=W0duuh-t427RlZFh"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -562,9 +621,9 @@ export const suportAccordionItems = [
           Bu yüzden saatleri doğru girmeniz gerekmektedir. Saat ayarları için
           lütfen izleyin.
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/lD4KbMii2DM?si=Fz2OMOj0OukECOkb"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -584,9 +643,9 @@ export const suportAccordionItems = [
           fiyatı belirleyebilirsiniz. Ayrıca dilerseniz ek olarak servis
           ücretide ekleyebilirsiniz.
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/89bAq_vsGTk?si=6u8g6bN0jY8ycc8E"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -606,9 +665,9 @@ export const suportAccordionItems = [
           doldurduklarında hediye ürünler vermek istiyorsanız bu bilgi tam size
           göre...
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/lj5hbXv3Vwk?si=dY59mAEsQLWzr_3e"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -629,9 +688,9 @@ export const suportAccordionItems = [
           sadece Paket servisine kapatabilirsiniz. Yeniden siparişe açana kadar
           tamamen kapalı kalacağını unutmayın.
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/yW2bHTi5aGk?si=UG0VrMQXtuCmGp62"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -642,35 +701,90 @@ export const suportAccordionItems = [
       </>
     ),
   },
+  // {
+  //   title: "Masadan sipariş ayarları",
+  //   content: (
+  //     <>
+  //       <p>
+  //         İşletmenizde bulunan masalarda numaralarınız varsa eğer Müşterileriniz
+  //         kolaylıkla masadan sipariş verebilir. Bunun için yapmanız gereken
+  //         ayarı şimdi izleyin.
+  //       </p>
+  //       <div className="w-75 rounded-lg overflow-hidden mt-2">
+  //         <iframe
+  //           className="top-0 left-0 w-full h-full"
+  //           src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
+  //           title="YouTube video player"
+  //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  //           referrerPolicy="strict-origin-when-cross-origin"
+  //           allowFullScreen
+  //         ></iframe>
+  //       </div>
+  //       <hr className="mt-2" />
+  //       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+  //         <img src={imgMa1} alt="1" />
+  //         <img src={imgMa2} alt="2" />
+  //         <img src={imgMa3} alt="3" />
+  //         <img src={imgMa4} alt="4" />
+  //         <img src={imgMa5} alt="5" />
+  //       </div>
+  //     </>
+  //   ),
+  // },
   {
     title: "Masadan sipariş ayarları",
-    content: (
-      <>
-        <p>
-          İşletmenizde bulunan masalarda numaralarınız varsa eğer Müşterileriniz
-          kolaylıkla masadan sipariş verebilir. Bunun için yapmanız gereken
-          ayarı şimdi izleyin.
-        </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-        <hr className="mt-2" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-          <img src={imgMa1} alt="1" />
-          <img src={imgMa2} alt="2" />
-          <img src={imgMa3} alt="3" />
-          <img src={imgMa4} alt="4" />
-          <img src={imgMa5} alt="5" />
-        </div>
-      </>
-    ),
+    content: (() => {
+      function ImageGrid() {
+        const [selectedImage, setSelectedImage] = useState(null);
+
+        const images = [
+          { src: imgMa1, alt: "1" },
+          { src: imgMa2, alt: "2" },
+          { src: imgMa3, alt: "3" },
+          { src: imgMa4, alt: "4" },
+          { src: imgMa5, alt: "5" },
+        ];
+
+        return (
+          <>
+            <p>
+              İşletmenizde bulunan masalarda numaralarınız varsa eğer
+              Müşterileriniz kolaylıkla masadan sipariş verebilir. Bunun için
+              yapmanız gereken ayarı şimdi izleyin.
+            </p>
+            <div className="w-75 rounded-lg overflow-hidden mt-2">
+              <iframe
+                className="top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <hr className="mt-2" />
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  className="cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setSelectedImage(image.src)}
+                />
+              ))}
+            </div>
+            <ImageModal
+              isOpen={!!selectedImage}
+              onClose={() => setSelectedImage(null)}
+              imageSrc={selectedImage}
+            />
+          </>
+        );
+      }
+
+      return <ImageGrid />;
+    })(),
   },
   {
     title: "Duyuru / Haber yayınlama",
@@ -681,9 +795,9 @@ export const suportAccordionItems = [
           giren müşterilerinizi bir mesaj ile karşılamak isterseniz eğer bu
           video size yardımcı olacaktır.
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/9GVf43XNYpE?si=S_sYYH688jnX_AZN"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -703,9 +817,9 @@ export const suportAccordionItems = [
           kasa panelini bilgisayarınıza kurmanız gerekiyor. Bu video size
           yardımcı olacaktır.
         </p>
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mt-2">
+        <div className="w-75 rounded-lg overflow-hidden mt-2">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/3Cd83M0YdOc?si=Nbibc3uxC8H9uS2S"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
