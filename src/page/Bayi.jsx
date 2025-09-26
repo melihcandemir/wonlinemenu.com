@@ -13,7 +13,7 @@ export default function Bayi(props) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const correctPassword = "bayi2025"; // Doğru parola
+  const correctPassword = "5454"; // Doğru parola
 
   const handleSubmit = (e) => {
     e.preventDefault();
