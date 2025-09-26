@@ -424,75 +424,200 @@ export const suportAccordionItems = [
       </>
     ),
   },
+
+  // {
+  //   title: "ALPEMIX 7/24 destek alın.",
+  //   content: (
+  //     <>
+  //       <p className="mb-2">
+  //         ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz Servis
+  //         yazılımıdır.
+  //       </p>
+  //       <a
+  //         href="https://www.alpemix.com/site/AlpemixService.exe"
+  //         className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
+  //       >
+  //         Şimdi indir
+  //       </a>
+  //       <p className="mb-2">
+  //         Görsel olarak kurulum anlatımı :<br />
+  //         Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak devam
+  //         edin.
+  //       </p>
+  //       <img src={img1} alt="1" className="w-md" />
+  //       {/*  */}
+  //       <hr className="mt-2" />
+  //       <p className="mt-3">
+  //         Kurulum için karşınıza çıkan bu pencerede Başlat butonuna basın.
+  //       </p>
+  //       <img src={img2} alt="2" className="w-md" />
+  //       {/*  */}
+  //       <hr className="mt-2" />
+  //       <p className="mt-3">
+  //         Kuruluma devam etmek için ilk seçili olan seçeneği işaretli bırakarak
+  //         TAMAM butonuna basın.
+  //       </p>
+  //       <img src={img3} alt="3" className="w-md" />
+  //       {/*  */}
+  //       <hr className="mt-2" />
+  //       <p className="mt-3">
+  //         Tebrikler, Destek programınız hazır. <br />
+  //         Giriş bilgilerinizi{" "}
+  //         <a
+  //           href="tel:+905409505454"
+  //           className="font-medium text-green-600 hover:underline"
+  //         >
+  //           WhatsApp
+  //         </a>{" "}
+  //         üzerinden bizden isteyebilirsiniz.
+  //       </p>
+  //       <img src={img4} alt="4" className="w-md" />
+  //       {/*  */}
+  //       <hr className="mt-2" />
+  //       <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
+  //       <div className="w-75 rounded-lg overflow-hidden">
+  //         <iframe
+  //           className="top-0 left-0 w-full h-full"
+  //           src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
+  //           title="YouTube video player"
+  //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  //           referrerPolicy="strict-origin-when-cross-origin"
+  //           allowFullScreen
+  //         ></iframe>
+  //       </div>
+  //     </>
+  //   ),
+  // },
   {
     title: "ALPEMIX 7/24 destek alın.",
-    content: (
-      <>
-        <p className="mb-2">
-          ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz Servis
-          yazılımıdır.
-        </p>
-        <a
-          href="https://www.alpemix.com/site/AlpemixService.exe"
-          className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
-        >
-          Şimdi indir
-        </a>
-        <p className="mb-2">
-          Görsel olarak kurulum anlatımı :<br />
-          Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak devam
-          edin.
-        </p>
-        <img src={img1} alt="1" className="w-md" />
-        {/*  */}
-        <hr className="mt-2" />
-        <p className="mt-3">
-          Kurulum için karşınıza çıkan bu pencerede Başlat butonuna basın.
-        </p>
-        <img src={img2} alt="2" className="w-md" />
-        {/*  */}
-        <hr className="mt-2" />
-        <p className="mt-3">
-          Kuruluma devam etmek için ilk seçili olan seçeneği işaretli bırakarak
-          TAMAM butonuna basın.
-        </p>
-        <img src={img3} alt="3" className="w-md" />
-        {/*  */}
-        <hr className="mt-2" />
-        <p className="mt-3">
-          Tebrikler, Destek programınız hazır. <br />
-          Giriş bilgilerinizi{" "}
-          <a
-            href="tel:+905409505454"
-            className="font-medium text-green-600 hover:underline"
-          >
-            WhatsApp
-          </a>{" "}
-          üzerinden bizden isteyebilirsiniz.
-        </p>
-        <img src={img4} alt="4" className="w-md" />
-        {/*  */}
-        <hr className="mt-2" />
-        <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
-        <div className="w-75 rounded-lg overflow-hidden">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
+    content: (() => {
+      function ImageGrid() {
+        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+        const images = [
+          { src: img1, alt: "1" },
+          { src: img2, alt: "2" },
+          { src: img3, alt: "3" },
+          { src: img4, alt: "4" },
+        ];
+
+        const handleNext = () => {
+          setSelectedImageIndex((prev) =>
+            prev < images.length - 1 ? prev + 1 : prev
+          );
+        };
+
+        const handlePrev = () => {
+          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+        };
+
+        return (
+          <>
+            <p className="mb-2">
+              ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz
+              Servis yazılımıdır.
+            </p>
+            <a
+              href="https://www.alpemix.com/site/AlpemixService.exe"
+              className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
+            >
+              Şimdi indir
+            </a>
+            <p className="mb-2">
+              Görsel olarak kurulum anlatımı :<br />
+              Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak
+              devam edin.
+            </p>
+
+            {/* Resim Grid */}
+            <img
+              src={img1}
+              alt="1"
+              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+              onClick={() => setSelectedImageIndex(0)}
+            />
+            <hr className="mt-2" />
+
+            <p className="mt-3">
+              Kurulum için karşınıza çıkan bu pencerede Başlat butonuna basın.
+            </p>
+            <img
+              src={img2}
+              alt="2"
+              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+              onClick={() => setSelectedImageIndex(1)}
+            />
+            <hr className="mt-2" />
+
+            <p className="mt-3">
+              Kuruluma devam etmek için ilk seçili olan seçeneği işaretli
+              bırakarak TAMAM butonuna basın.
+            </p>
+            <img
+              src={img3}
+              alt="3"
+              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+              onClick={() => setSelectedImageIndex(2)}
+            />
+            <hr className="mt-2" />
+
+            <p className="mt-3">
+              Tebrikler, Destek programınız hazır. <br />
+              Giriş bilgilerinizi{" "}
+              <a
+                href="tel:+905409505454"
+                className="font-medium text-green-600 hover:underline"
+              >
+                WhatsApp
+              </a>{" "}
+              üzerinden bizden isteyebilirsiniz.
+            </p>
+            <img
+              src={img4}
+              alt="4"
+              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+              onClick={() => setSelectedImageIndex(3)}
+            />
+
+            <ImageModal
+              isOpen={selectedImageIndex !== null}
+              onClose={() => setSelectedImageIndex(null)}
+              imageSrc={
+                selectedImageIndex !== null
+                  ? images[selectedImageIndex].src
+                  : ""
+              }
+              images={images}
+              currentIndex={selectedImageIndex}
+              onNext={handleNext}
+              onPrev={handlePrev}
+            />
+
+            <hr className="mt-2" />
+            <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
+            <div className="w-75 rounded-lg overflow-hidden mt-2">
+              <iframe
+                className="top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </>
+        );
+      }
+
+      return <ImageGrid />;
+    })(),
   },
   {
     title: "Sadece QR Menu olarak kullanabilir miyim?",
     content: (
       <>
         <p className="mb-2">Wonlinemenu 3 aşamalı bir sipariş sistemidir.</p>
-        <ul class="max-w-md list-disc list-inside">
+        <ul className="max-w-md list-disc list-inside">
           <li>Paket servisi</li>
           <li>Gel-Al</li>
           <li>QR Kodu ile Masan sipariş</li>
@@ -541,7 +666,7 @@ export const suportAccordionItems = [
     content: (() => {
       // Component içinde state kullanabilmek için function component yaklaşımı
       function ImageGrid() {
-        const [selectedImage, setSelectedImage] = useState(null);
+        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
         const images = [
           { src: imgM1, alt: "1" },
@@ -561,6 +686,16 @@ export const suportAccordionItems = [
           { src: imgM15, alt: "15" },
         ];
 
+        const handleNext = () => {
+          setSelectedImageIndex((prev) =>
+            prev < images.length - 1 ? prev + 1 : prev
+          );
+        };
+
+        const handlePrev = () => {
+          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+        };
+
         return (
           <>
             <p className="mb-2">
@@ -577,14 +712,22 @@ export const suportAccordionItems = [
                   src={image.src}
                   alt={image.alt}
                   className="cursor-pointer hover:opacity-90 transition-opacity"
-                  onClick={() => setSelectedImage(image.src)}
+                  onClick={() => setSelectedImageIndex(index)}
                 />
               ))}
             </div>
             <ImageModal
-              isOpen={!!selectedImage}
-              onClose={() => setSelectedImage(null)}
-              imageSrc={selectedImage}
+              isOpen={selectedImageIndex !== null}
+              onClose={() => setSelectedImageIndex(null)}
+              imageSrc={
+                selectedImageIndex !== null
+                  ? images[selectedImageIndex].src
+                  : ""
+              }
+              images={images}
+              currentIndex={selectedImageIndex}
+              onNext={handleNext}
+              onPrev={handlePrev}
             />
           </>
         );
@@ -735,7 +878,7 @@ export const suportAccordionItems = [
     title: "Masadan sipariş ayarları",
     content: (() => {
       function ImageGrid() {
-        const [selectedImage, setSelectedImage] = useState(null);
+        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
         const images = [
           { src: imgMa1, alt: "1" },
@@ -744,6 +887,16 @@ export const suportAccordionItems = [
           { src: imgMa4, alt: "4" },
           { src: imgMa5, alt: "5" },
         ];
+
+        const handleNext = () => {
+          setSelectedImageIndex((prev) =>
+            prev < images.length - 1 ? prev + 1 : prev
+          );
+        };
+
+        const handlePrev = () => {
+          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+        };
 
         return (
           <>
@@ -770,14 +923,22 @@ export const suportAccordionItems = [
                   src={image.src}
                   alt={image.alt}
                   className="cursor-pointer hover:opacity-90 transition-opacity"
-                  onClick={() => setSelectedImage(image.src)}
+                  onClick={() => setSelectedImageIndex(index)}
                 />
               ))}
             </div>
             <ImageModal
-              isOpen={!!selectedImage}
-              onClose={() => setSelectedImage(null)}
-              imageSrc={selectedImage}
+              isOpen={selectedImageIndex !== null}
+              onClose={() => setSelectedImageIndex(null)}
+              imageSrc={
+                selectedImageIndex !== null
+                  ? images[selectedImageIndex].src
+                  : ""
+              }
+              images={images}
+              currentIndex={selectedImageIndex}
+              onNext={handleNext}
+              onPrev={handlePrev}
             />
           </>
         );
