@@ -139,6 +139,15 @@ export default function Footer() {
                 REFERANSLAR
               </Link>
             </li>
+            <li>
+              <Link
+                onClick={scrollToTop}
+                to="/wgarson"
+                className="flex items-center hover:text-green-600 transition-colors"
+              >
+                <span className="text-green-600 text-2xl mr-1">•</span>W Garson
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

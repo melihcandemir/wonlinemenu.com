@@ -10,10 +10,9 @@ export default function SectionTwo() {
             className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/GfqjnHAYwD0?si=5W2RLBZkmyJlLQDG"
             title="YouTube video player"
-            // frameBorder="0" // düzeltildi
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin" // düzeltildi
-            allowFullScreen // düzeltildi
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       </div>

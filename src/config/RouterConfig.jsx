@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Pricing from "../page/Pricing";
 import Referanslar from "../page/Referanslar";
 import Support from "../page/Support";
+import WGarson from "../page/WGarson";
 
 export default function RouterConfig() {
   //
@@ -56,6 +57,7 @@ export default function RouterConfig() {
         element={<Referanslar isVisible={isVisible} />}
       />
       <Route path="/destek" element={<Support isVisible={isVisible} />} />
+      <Route path="/wgarson" element={<WGarson isVisible={isVisible} />} />
       <Route path="/admin54" element={<Admin />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
