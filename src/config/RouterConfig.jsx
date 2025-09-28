@@ -60,7 +60,7 @@ export default function RouterConfig() {
       <Route path="/destek" element={<Support isVisible={isVisible} />} />
       <Route path="/wgarson" element={<WGarson isVisible={isVisible} />} />
       <Route path="/bayi" element={<Bayi isVisible={isVisible} />} />
-      <Route path="/admin54" element={<Admin />} />
+      {/* <Route path="/admin54" element={<Admin />} /> */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

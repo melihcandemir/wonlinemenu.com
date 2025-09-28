@@ -63,6 +63,34 @@ export const accordionItems = [
       </>
     ),
   },
+  {
+    title: "Siparişlerimi Printerdan yazdırabilir miyim?",
+    content: (
+      <>
+        <p className="mb-2">
+          Wonlinemenu programını bilgisayarınıza kurduysanız, siparişleriniz
+          Whatsapp’a düştükten sonra SİPARİŞLER sayfasına geçiş yaparak sipariş
+          numarasına göre yazdırabilirsiniz.
+        </p>
+        <p className="mb-2">
+          Programı kullanmadan siparişleri yazdırmakda mümkün bunun için bizden
+          destek alabilirsiniz
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Müşteriler bize nasıl ulaşacaklar?",
+    content: (
+      <>
+        <p className="mb-2">
+          Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
+          müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
+          edebilir, sipariş vermelerini sağlayabilirsiniz.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export const tests = [
@@ -73,7 +101,7 @@ export const tests = [
   },
   {
     id: 2,
-    langue: "Almanca",
+    langue: "Felemenkçe",
     test: "wonline.menu/demo/nl/",
   },
   {
