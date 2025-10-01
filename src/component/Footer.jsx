@@ -166,7 +166,7 @@ export default function Footer() {
           <Link to="/" onClick={scrollToTop} className="text-green-600">
             WonlineMenu
           </Link>
-          . Tüm hakları saklıdır. Powered by <a href="tel:+905348324940" className="text-green-600">Melih Can Demir</a>.
+          . Tüm hakları saklıdır. <br /> Powered by <a href="https://wa.me/905348324940" className="text-green-600">Melih Can Demir</a>.
         </p>
       </div>
     </footer>

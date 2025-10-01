@@ -6,6 +6,7 @@ import SectionThree from "../component/SectionThree";
 import SectionFour from "../component/SectionFour";
 import SectionFive from "../component/SectionFive";
 import SectionSix from "../component/SectionSix";
+import GoogleReviews from "../component/GoogleReviews";
 import Footer from "../component/Footer";
 import ScrollTotop from "../component/ScrollTotop";
 import Theme from "../component/Theme";
@@ -43,6 +44,9 @@ export default function Home(props) {
       <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-0 md:pt-18">
         <SectionSix />
       </div>
+
+      {/* Google Yorumları Bölümü */}
+      <GoogleReviews />
 
       <Footer />
       {/* <Theme /> */}
