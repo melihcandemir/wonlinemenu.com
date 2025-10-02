@@ -25,73 +25,75 @@ import imgMa5 from "../assets/support/wonlineTafel-370x370.jpg";
 import { useState } from "react";
 import ImageModal from "./ImageModal";
 
-export const accordionItems = [
-  {
-    title: "Wonlinemenu nedir?",
-    content: (
-      <p className="mb-2">
-        Wonlinemenu (WhatsApp Online Menu), işletmeler için Whatsapp üzerinden
-        sipariş alabileceğiniz kolay e-ticaret yazılımıdır. kolaylıkla
-        ürünlerinizi ekleyebilir ve sipariş alabilirsiniz.
-      </p>
-    ),
-  },
-  {
-    title: "Nasıl kullanabilirim?",
-    content: (
-      <p className="mb-2">
-        Wonlinemenu, Abonelik sistemi ile hizmet vermektedir. Yıllık periyotta
-        ödeme yaparak kullanmaya başlabilirsiniz. Bizimle iletişim kurarak daha
-        fazla detaylı bilgi alabilirsiniz.
-      </p>
-    ),
-  },
-  {
-    title: "Ödemeleri nasıl alacağız?",
-    content: (
-      <>
-        <p className="mb-2">
-          Wonlinemenu üzerinden online ödeme alabilirsiniz. Kontrol panelinden
-          Ödeme yöntemleri belirleyerek müşterilerinize kolaylıklar
-          sağlıyabilirsiniz.
-        </p>
-        <p className="mb-2">
-          Örnek : Kapıda Nakit Ödeme, Kapıda Kredi Kartı, Ticket Restaurant,
-          Sodexo, Multinet, Setcard, Winwin, Metropol, Havale & EFT, Payconiq,
-          Papara gibi..
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "Siparişlerimi Printerdan yazdırabilir miyim?",
-    content: (
-      <>
-        <p className="mb-2">
-          Wonlinemenu programını bilgisayarınıza kurduysanız, siparişleriniz
-          Whatsapp’a düştükten sonra SİPARİŞLER sayfasına geçiş yaparak sipariş
-          numarasına göre yazdırabilirsiniz.
-        </p>
-        <p className="mb-2">
-          Programı kullanmadan siparişleri yazdırmakda mümkün bunun için bizden
-          destek alabilirsiniz
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "Müşteriler bize nasıl ulaşacaklar?",
-    content: (
-      <>
-        <p className="mb-2">
-          Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
-          müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
-          edebilir, sipariş vermelerini sağlayabilirsiniz.
-        </p>
-      </>
-    ),
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
+import { accordionTranslations } from "../translations/accordion";
+
+export const getAccordionItems = () => {
+  const { selectedLanguage } = useLanguage();
+  const translations = accordionTranslations[selectedLanguage];
+
+  return translations.items.map((item) => ({
+    title: item.title,
+    content:
+      typeof item.content === "string" ? (
+        <p className="mb-2">{item.content}</p>
+      ) : (
+        <>
+          {Object.values(item.content).map((paragraph, index) => (
+            <p key={index} className="mb-2">
+              {paragraph}
+            </p>
+          ))}
+        </>
+      ),
+  }));
+};
+//   {
+//     title: "Ödemeleri nasıl alacağız?",
+//     content: (
+//       <>
+//         <p className="mb-2">
+//           Wonlinemenu üzerinden online ödeme alabilirsiniz. Kontrol panelinden
+//           Ödeme yöntemleri belirleyerek müşterilerinize kolaylıklar
+//           sağlıyabilirsiniz.
+//         </p>
+//         <p className="mb-2">
+//           Örnek : Kapıda Nakit Ödeme, Kapıda Kredi Kartı, Ticket Restaurant,
+//           Sodexo, Multinet, Setcard, Winwin, Metropol, Havale & EFT, Payconiq,
+//           Papara gibi..
+//         </p>
+//       </>
+//     ),
+//   },
+//   {
+//     title: "Siparişlerimi Printerdan yazdırabilir miyim?",
+//     content: (
+//       <>
+//         <p className="mb-2">
+//           Wonlinemenu programını bilgisayarınıza kurduysanız, siparişleriniz
+//           Whatsapp’a düştükten sonra SİPARİŞLER sayfasına geçiş yaparak sipariş
+//           numarasına göre yazdırabilirsiniz.
+//         </p>
+//         <p className="mb-2">
+//           Programı kullanmadan siparişleri yazdırmakda mümkün bunun için bizden
+//           destek alabilirsiniz
+//         </p>
+//       </>
+//     ),
+//   },
+//   {
+//     title: "Müşteriler bize nasıl ulaşacaklar?",
+//     content: (
+//       <>
+//         <p className="mb-2">
+//           Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
+//           müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
+//           edebilir, sipariş vermelerini sağlayabilirsiniz.
+//         </p>
+//       </>
+//     ),
+//   },
+// ];
 
 export const tests = [
   {
