@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import wonlineLogo from "../assets/wonline2023.png";
+import { useLanguage } from "../context/LanguageContext";
+import { navbarTranslations } from "../translations/navbar";
 
 export default function Navbar(props) {
   const { isVisible } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { selectedLanguage } = useLanguage();
+  const translations = navbarTranslations[selectedLanguage];
 
   // Menü açma/kapama fonksiyonu
   const toggleMenu = () => {
@@ -44,28 +48,28 @@ export default function Navbar(props) {
               to="/"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
-              ANASAYFA
+              {translations.home}
             </Link>
             <Link
               onClick={scrollToTop}
               to="/test-et"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
-              TEST ET
+              {translations.test}
             </Link>
             <Link
               onClick={scrollToTop}
               to="/fiyatlandirma"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
-              FİYATLANDIRMA
+              {translations.pricing}
             </Link>
             <Link
               onClick={scrollToTop}
               to="/destek"
               className="text-sm font-medium text-gray-900 hover:text-green-600 transition-colors"
             >
-              DESTEK
+              {translations.support}
             </Link>
           </div>
 
@@ -114,7 +118,7 @@ export default function Navbar(props) {
                   scrollToTop();
                 }}
               >
-                ANASAYFA
+                {translations.home}
               </Link>
               <Link
                 to="/test-et"
@@ -124,7 +128,7 @@ export default function Navbar(props) {
                   scrollToTop();
                 }}
               >
-                TEST ET
+                {translations.test}
               </Link>
               <Link
                 to="/fiyatlandirma"
@@ -134,7 +138,7 @@ export default function Navbar(props) {
                   scrollToTop();
                 }}
               >
-                FİYATLANDIRMA
+                {translations.pricing}
               </Link>
               <Link
                 to="/destek"
@@ -144,7 +148,7 @@ export default function Navbar(props) {
                   scrollToTop();
                 }}
               >
-                DESTEK
+                {translations.support}
               </Link>
             </div>
           </div>
