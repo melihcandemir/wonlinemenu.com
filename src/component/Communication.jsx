@@ -36,7 +36,7 @@ export default function Communication(props) {
         </div>
         <button
           onClick={() => window.open("https://wa.me/905409505454", "_blank")}
-          className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-colors duration-300 cursor-pointer"
+          className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-colors duration-300 cursor-pointer"
         >
           {translations.orderNow}
         </button>

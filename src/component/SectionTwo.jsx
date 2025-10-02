@@ -1,4 +1,9 @@
+import { useLanguage } from "../context/LanguageContext";
+import { sectionTwoTranslations } from "../translations/sectionTwo";
+
 export default function SectionTwo() {
+  const { selectedLanguage } = useLanguage();
+  const translations = sectionTwoTranslations[selectedLanguage];
   return (
     <div className="flex flex-col lg:flex-row items-center lg:space-x-8">
       <div className="flex-shrink-0 mb-6 w-full md:mb-0 lg:w-1/2">
@@ -18,16 +23,14 @@ export default function SectionTwo() {
       </div>
 
       <div className="lg:w-1/2 text-center md:text-left">
-        <h3 className="text-lg md:text-2xl text-gray-600">Nasıl çalışır?</h3>
+        <h3 className="text-lg md:text-2xl text-gray-600">
+          {translations.howItWorks}
+        </h3>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-          wonlinemenu nedir?
+          {translations.whatIs}
         </h1>
         <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-          Web siteniz üzerinden müşterilerinizin seçmiş olduğu ürünleri otomatik
-          olarak WhatsApp hesabına göndermesini sağlar. Gelen her sipariş için
-          müşterilerinize WhatsApp üzerinden yeniden cevap verebilirsiniz, aynı
-          zamanda özel yazılımımız sayesinde dilediğiniz siparişi yazıcınızdan
-          çıktı alabilirsiniz.
+          {translations.description}
         </p>
       </div>
     </div>

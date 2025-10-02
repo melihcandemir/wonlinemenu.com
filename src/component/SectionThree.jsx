@@ -1,4 +1,9 @@
+import { useLanguage } from "../context/LanguageContext";
+import { sectionThreeTranslations } from "../translations/sectionThree";
+
 export default function SectionThree() {
+  const { selectedLanguage } = useLanguage();
+  const translations = sectionThreeTranslations[selectedLanguage];
   return (
     <div className="w-full bg-stone-200 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,11 +34,10 @@ export default function SectionThree() {
               </svg>
             </div>
             <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
-              QR KODU İLE SİPARİŞ ALMA
+              {translations.qrOrder.title}
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Her masaya farklı bir QR kodu oluşturarak, Masa numarası üzerinden
-              sipariş alabilir, Müşterilerinize anında cevap verebilirsiniz.
+              {translations.qrOrder.description}
             </p>
           </div>
 
@@ -53,11 +57,10 @@ export default function SectionThree() {
               </svg>
             </div>
             <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
-              PAKET SERVİSİ
+              {translations.delivery.title}
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Aynı sistem üzerinden paket servisi siparişi alabilir. Anında
-              konum yollama, sesli mesaj gibi özellikleri kullanabilirsiniz.
+              {translations.delivery.description}
             </p>
           </div>
 
@@ -80,11 +83,10 @@ export default function SectionThree() {
               </svg>
             </div>
             <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
-              GEL - AL
+              {translations.takeaway.title}
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Müşterileriniz seçmiş olduğu siparişi, kaç dakika sonra gelip
-              alacağını belirterek size daha net bir bilgi aktarabilir.
+              {translations.takeaway.description}
             </p>
           </div>
         </div>
