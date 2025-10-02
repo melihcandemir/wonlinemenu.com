@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import img from "../assets/wonline_new_alt.png";
+import { useLanguage } from "../context/LanguageContext";
+import { footerTranslations } from "../translations/footer";
 
 export default function Footer() {
-  //
   const currentYear = new Date().getFullYear();
+  const { selectedLanguage } = useLanguage();
+  const translations = footerTranslations[selectedLanguage];
   //
   const scrollToTop = () => {
     window.scrollTo({
@@ -20,15 +23,14 @@ export default function Footer() {
           <Link className="cursor-pointer" to="/" onClick={scrollToTop}>
             <img src={img} alt="logo" />
           </Link>
-          <p className="text-white max-w-sm">
-            Wonlinemenu WhatsApp üzerinden düzenli bir sipariş alımı sağlayan
-            sistemdir.
-          </p>
+          <p className="text-white max-w-sm">{translations.description}</p>
         </div>
 
         {/* Orta Sütun: İletişim */}
         <div className="space-y-4 text-white md:px-20">
-          <h3 className="text-xl font-bold text-green-600">İletişim</h3>
+          <h3 className="text-xl font-bold text-green-600">
+            {translations.contact}
+          </h3>
           <ul className="space-y-3">
             <li className="flex items-center">
               <svg
@@ -79,9 +81,9 @@ export default function Footer() {
                 />
               </svg>
               <span>
-                Aziziye mah. 415 sk. no: 10A
+                {translations.address.line1}
                 <br />
-                Karasu/Sakarya
+                {translations.address.line2}
               </span>
             </li>
           </ul>
@@ -89,7 +91,9 @@ export default function Footer() {
 
         {/* Sağ Sütun: Sayfalar */}
         <div className="text-white">
-          <h3 className="text-xl font-bold text-green-600 pb-2">Sayfalar</h3>
+          <h3 className="text-xl font-bold text-green-600 pb-2">
+            {translations.pages}
+          </h3>
           <ul>
             <li>
               <Link
@@ -97,7 +101,8 @@ export default function Footer() {
                 to="/"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
-                <span className="text-green-600 text-2xl mr-1">•</span>ANASAYFA
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                {translations.navigation.home}
               </Link>
             </li>
 
@@ -107,7 +112,8 @@ export default function Footer() {
                 to="/test-et"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
-                <span className="text-green-600 text-2xl mr-1">•</span>TEST ET
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                {translations.navigation.test}
               </Link>
             </li>
             <li>
@@ -117,7 +123,7 @@ export default function Footer() {
                 className="flex items-center hover:text-green-600 transition-colors"
               >
                 <span className="text-green-600 text-2xl mr-1">•</span>
-                FİYATLANDIRMA
+                {translations.navigation.pricing}
               </Link>
             </li>
             <li>
@@ -126,7 +132,8 @@ export default function Footer() {
                 to="/destek"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
-                <span className="text-green-600 text-2xl mr-1">•</span>DESTEK
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                {translations.navigation.support}
               </Link>
             </li>
             <li>
@@ -136,7 +143,7 @@ export default function Footer() {
                 className="flex items-center hover:text-green-600 transition-colors"
               >
                 <span className="text-green-600 text-2xl mr-1">•</span>
-                REFERANSLAR
+                {translations.navigation.references}
               </Link>
             </li>
             <li>
@@ -145,7 +152,8 @@ export default function Footer() {
                 to="/wgarson"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
-                <span className="text-green-600 text-2xl mr-1">•</span>W GARSON
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                {translations.navigation.waiter}
               </Link>
             </li>
             <li>
@@ -154,7 +162,8 @@ export default function Footer() {
                 to="/bayi"
                 className="flex items-center hover:text-green-600 transition-colors"
               >
-                <span className="text-green-600 text-2xl mr-1">•</span>BAYİ
+                <span className="text-green-600 text-2xl mr-1">•</span>
+                {translations.navigation.dealer}
               </Link>
             </li>
           </ul>
@@ -166,7 +175,7 @@ export default function Footer() {
           <Link to="/" onClick={scrollToTop} className="text-green-600">
             WonlineMenu
           </Link>
-          . Tüm hakları saklıdır. <br /> Powered by{" "}
+          . {translations.copyright} <br /> {translations.poweredBy}{" "}
           <a href="https://wa.me/905348324940" className="text-green-600">
             Melih Can Demir
           </a>
