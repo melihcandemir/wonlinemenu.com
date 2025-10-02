@@ -1,5 +1,6 @@
 import Communication from "../component/Communication";
 import Footer from "../component/Footer";
+import LanguageSelector from "../component/LanguageSelector";
 import Navbar from "../component/Navbar";
 import ScrollTotop from "../component/ScrollTotop";
 import SupportSection from "../component/SupportSection";
@@ -17,6 +18,7 @@ export default function Support(props) {
 
       <Footer />
       <ScrollTotop />
+      <LanguageSelector />
     </>
   );
 }

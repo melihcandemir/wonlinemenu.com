@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("tr");
+  const { selectedLanguage, setSelectedLanguage } = useLanguage();
 
   // Dil seçenekleri
   const languages = [
@@ -29,8 +30,6 @@ export default function LanguageSelector() {
   const handleLanguageChange = (languageCode) => {
     setSelectedLanguage(languageCode);
     setIsOpen(false);
-    // Burada dil değiştirme işlemi yapılacak
-    console.log("Dil değiştirildi:", languageCode);
   };
 
   return (

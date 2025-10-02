@@ -1,5 +1,6 @@
 import Communication from "../component/Communication";
 import Footer from "../component/Footer";
+import LanguageSelector from "../component/LanguageSelector";
 import Navbar from "../component/Navbar";
 import ScrollTotop from "../component/ScrollTotop";
 import WGarsonSection from "../component/WGarsonSection";
@@ -15,6 +16,7 @@ export default function WGarson(props) {
       </div>
       <Footer />
       <ScrollTotop />
+      <LanguageSelector />
     </>
   );
 }

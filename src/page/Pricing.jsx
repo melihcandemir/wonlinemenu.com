@@ -1,5 +1,6 @@
 import Communication from "../component/Communication";
 import Footer from "../component/Footer";
+import LanguageSelector from "../component/LanguageSelector";
 import Navbar from "../component/Navbar";
 import PricingCard from "../component/PricingCard";
 import ScrollTotop from "../component/ScrollTotop";
@@ -16,6 +17,7 @@ export default function Pricing(props) {
       </div>
       <Footer />
       <ScrollTotop />
+      <LanguageSelector />
     </>
   );
 }

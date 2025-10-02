@@ -10,6 +10,7 @@ import GoogleReviews from "../component/GoogleReviews";
 import Footer from "../component/Footer";
 import ScrollTotop from "../component/ScrollTotop";
 import Theme from "../component/Theme";
+import LanguageSelector from "../component/LanguageSelector";
 
 export default function Home(props) {
   const { isVisible } = props;
@@ -49,8 +50,8 @@ export default function Home(props) {
       <GoogleReviews />
 
       <Footer />
-      {/* <Theme /> */}
       <ScrollTotop />
+      <LanguageSelector />
     </>
   );
 }

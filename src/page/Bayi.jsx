@@ -4,6 +4,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ScrollTotop from "../component/ScrollTotop";
 import BayiPricingCard from "../component/BayiPricingCard";
+import LanguageSelector from "../component/LanguageSelector";
 
 export default function Bayi(props) {
   const { isVisible } = props;
@@ -67,6 +68,7 @@ export default function Bayi(props) {
       </div>
       <Footer />
       <ScrollTotop />
+      <LanguageSelector />
     </div>
   );
 }
