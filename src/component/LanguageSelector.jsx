@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { langueSelectTranslation } from "../translations/langueSelect";
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage, setSelectedLanguage } = useLanguage();
+  const translations = langueSelectTranslation[selectedLanguage];
 
   // Dil seçenekleri
   const languages = [
@@ -33,16 +35,18 @@ export default function LanguageSelector() {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-0 right-6 z-50">
       {/* Ana Buton */}
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full p-2 group cursor-pointer"
+          className="bg-black text-white shadow-lg hover:shadow-xl transition-all duration-300 px-2 py-1 group cursor-pointer"
           aria-label="Dil Seçici"
         >
           <div className="flex items-center space-x-2">
-            <span>{currentLanguage?.flag}</span>
+            <span>
+              {translations.title}: {currentLanguage?.flag}
+            </span>
             <svg
               className={`w-4 h-4  transition-transform duration-200 ${
                 isOpen ? "rotate-180" : ""
@@ -63,7 +67,7 @@ export default function LanguageSelector() {
 
         {/* Dil Seçenekleri Dropdown */}
         {isOpen && (
-          <div className="absolute bottom-full left-0 mb-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-[160px] animate-in slide-in-from-bottom-2 duration-200">
+          <div className="absolute bottom-full right-0 mb-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-[160px] animate-in slide-in-from-bottom-2 duration-200">
             {languages.map((language) => (
               <button
                 key={language.code}
