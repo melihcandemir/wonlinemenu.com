@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
+import { bayiPricingCardTranslations } from "../translations/bayiPricingCard";
+
 export default function BayiPricingCard() {
+  const { selectedLanguage } = useContext(LanguageContext);
+  const t = bayiPricingCardTranslations[selectedLanguage];
   return (
     // Ana taşıyıcı: Kartları yan yana (md ve üzeri ekranlarda) dizer ve aralarında boşluk bırakır.
     <div className="flex flex-col md:flex-row gap-8 p-4">
@@ -7,18 +13,15 @@ export default function BayiPricingCard() {
       <div className="flex flex-col w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden font-sans mb-6 md:mb-0">
         {/* Üst Kısım (Değişiklik yok) */}
         <div className="bg-[#2c2a29] text-white text-center p-5">
-          <h2 className="text-3xl font-bold">Wonline EKO</h2>
-          <p className="text-white mt-2">Kurulum + 1 Yıl kullanım.</p>
+          <h2 className="text-3xl font-bold">{t.ekoTitle}</h2>
+          <p className="text-white mt-2">{t.setupAndUsage}</p>
           <div className="my-6">
             <span className="text-7xl font-extrabold">250€</span>
           </div>
           <p className="text-green-600 font-semibold text-lg">
-            Bir sonraki yıl yenileme ücreti: 200€
+            {t.renewalFeeText} 200€
           </p>
-          <p className="text-white mt-4 text-sm px-4">
-            Sistem üzerinden Yıllık 25,000€ altında sipariş alan işletmeler
-            içindir.
-          </p>
+          <p className="text-white mt-4 text-sm px-4">{t.ekoDescription}</p>
         </div>
 
         {/* Alt Kısım (Beyaz Alan - Özellikler) */}
@@ -27,13 +30,15 @@ export default function BayiPricingCard() {
           {/* Değişiklik: flex-grow eklendi. Bu div'in mevcut alanı doldurmasını ve butonu aşağı itmesini sağlar. */}
           <div className="flex-grow text-center text-gray-700">
             <p className="py-4 border-b border-gray-200">
-              1 Web sitesi (www.siteadi.com)
+              {t.features.website}
             </p>
-            <p className="py-4 border-b border-gray-200">10GB aylık trafik</p>
             <p className="py-4 border-b border-gray-200">
-              Max. 25,000€ yıllık ciro
+              {t.features.traffic10GB}
             </p>
-            <p className="py-4">Online ödeme</p>
+            <p className="py-4 border-b border-gray-200">
+              {t.features.maxRevenue}
+            </p>
+            <p className="py-4">{t.features.onlinePayment}</p>
           </div>
 
           {/* Satın Al Butonu (Değişiklik yok) */}
@@ -44,7 +49,7 @@ export default function BayiPricingCard() {
               }
               className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 cursor-pointer"
             >
-              Satın Al
+              {t.buyButton}
             </button>
           </div>
         </div>
@@ -55,17 +60,15 @@ export default function BayiPricingCard() {
       <div className="flex flex-col w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden font-sans">
         {/* Üst Kısım (Değişiklik yok) */}
         <div className="bg-[#2c2a29] text-white text-center p-5">
-          <h2 className="text-3xl font-bold">Wonline PLUS</h2>
-          <p className="text-white mt-2">Kurulum + 1 Yıl kullanım.</p>
+          <h2 className="text-3xl font-bold">{t.plusTitle}</h2>
+          <p className="text-white mt-2">{t.setupAndUsage}</p>
           <div className="my-6">
             <span className="text-7xl font-extrabold">350€</span>
           </div>
           <p className="text-green-600 font-semibold text-lg">
-            Bir sonraki yıl yenileme ücreti: 300€
+            {t.renewalFeeText} 300€
           </p>
-          <p className="text-white mt-4 text-sm px-4">
-            Limit istemeyen işletmeler için sınırsız üst düzey paket.
-          </p>
+          <p className="text-white mt-4 text-sm px-4">{t.plusDescription}</p>
         </div>
 
         {/* Alt Kısım (Beyaz Alan - Özellikler) */}
@@ -74,23 +77,27 @@ export default function BayiPricingCard() {
           {/* Değişiklik: flex-grow eklendi. */}
           <div className="flex-grow text-center text-gray-700">
             <p className="py-4 border-b border-gray-200">
-              1 Web sitesi (www.siteadi.com)
+              {t.features.website}
             </p>
             <p className="py-4 border-b border-gray-200">
-              Kasa & Garson sistemi
+              {t.features.posSystem}
             </p>
             <p className="py-4 border-b border-gray-200">
-              5 Adet şirket mail adresi. (info@sirketadi.com)
+              {t.features.companyEmails}
             </p>
             <p className="py-4 border-b border-gray-200">
-              Sınırsız aylık trafik
+              {t.features.unlimitedTraffic}
             </p>
-            <p className="py-4 border-b border-gray-200">Sınırsız ciro</p>
             <p className="py-4 border-b border-gray-200">
-              Sosyal medya reklamı
+              {t.features.unlimitedRevenue}
             </p>
-            <p className="py-4 border-b border-gray-200">7/24 Teknik destek</p>
-            <p className="py-4">Online ödeme</p>
+            <p className="py-4 border-b border-gray-200">
+              {t.features.socialMedia}
+            </p>
+            <p className="py-4 border-b border-gray-200">
+              {t.features.support}
+            </p>
+            <p className="py-4">{t.features.onlinePayment}</p>
           </div>
 
           {/* Satın Al Butonu (Değişiklik yok) */}
@@ -101,7 +108,7 @@ export default function BayiPricingCard() {
               }
               className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 cursor-pointer"
             >
-              Satın Al
+              {t.buyButton}
             </button>
           </div>
         </div>
