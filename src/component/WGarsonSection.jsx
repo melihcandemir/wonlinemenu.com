@@ -1,36 +1,35 @@
 import img from "../assets/AND.png";
 import Accordion from "./Accordion";
 import { wGarson } from "./data";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
+import { wGarsonSectionTranslations } from "../translations/wGarsonSection";
 
 export default function WGarsonSection() {
+  const { selectedLanguage } = useContext(LanguageContext);
+  const t = wGarsonSectionTranslations[selectedLanguage];
+
   return (
     <>
       <div className="flex flex-col lg:flex-row items-center lg:space-x-8">
         <div className="lg:w-1/2 text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            Hızlı & Dinamik
+            {t.title}
           </h1>
           <p className="text-gray-600 leading-relaxed text-base">
-            W Garson ile Garsonlarınız kendi mobil cihazları ile sipariş
-            alabilir, İşletmenizde ek olarak cihaz kullanmanıza gerek yoktur.
+            {t.description1}
           </p>
           <p className="text-gray-600 leading-relaxed text-base my-4">
-            Kasa panelinden istediğiniz kadar Yeni garson üyeliği
-            oluşturabilirsiniz, Her garson kendi kullanıcı adı ve şifresi ile
-            sisteme giriş yapar.
+            {t.description2}
           </p>
           <p className="text-gray-600 leading-relaxed text-base">
-            Böylelikle sipariş alan veya siparişi düzenleyen garsonlarınızın kim
-            olduğunuzu rahatlıkla görebilirsiniz.
+            {t.description3}
           </p>
           <p className="text-gray-600 leading-relaxed text-base my-4">
-            W Garson’u kullanabilmeniz için bizimle lütfen iletişime geçin.
+            {t.description4}
           </p>
           <p className="text-gray-600 leading-relaxed text-base mb-4">
-            Not : Zaten Kasa ve Garson sistemini kullanıyorsanız ve
-            Garsonlarınızın cihazı Android işletim sistemi ile çalışıyorsa,
-            Aşağıda bulunan listeden kendi restoranınıza ait uygulamayı
-            indirerek daha kolay kullanım sağlayabilirsiniz.
+            {t.note}
           </p>
         </div>
         <div className="flex-shrink-0 mb-6 w-full md:mb-0 lg:w-1/2">
@@ -46,7 +45,6 @@ export default function WGarsonSection() {
           </div>
         </div>
       </div>
-      {/*  */}
       <div className="w-full">
         <img src={img} alt="1" className="w-70 mx-auto" />
         <Accordion items={wGarson} />
