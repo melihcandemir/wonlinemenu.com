@@ -57,12 +57,12 @@ export const tests = [
   },
   {
     id: 2,
-    langue: "Felemenkçe",
+    langue: "Nederlands",
     test: "wonline.menu/demo/nl/",
   },
   {
     id: 3,
-    langue: "Fransızca",
+    langue: "Français",
     test: "wonline.menu/demo/fr/",
   },
 ];

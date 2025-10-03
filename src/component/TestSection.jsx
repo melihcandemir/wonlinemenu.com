@@ -1,12 +1,17 @@
 import { tests } from "./data";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
+import { testSectionTranslations } from "../translations/testSection";
 
 export default function TestSection() {
+  const { selectedLanguage } = useContext(LanguageContext);
+  const t = testSectionTranslations[selectedLanguage];
   return (
     <div className="flex flex-col">
       <main className="flex-grow py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-xl font-bold text-center text-gray-800 mb-3">
-            Test Listesi
+            {t.title}
           </h1>
           <div className="max-w-2xl mx-auto bg-gray-200 rounded-lg shadow-md p-6">
             <ul className="space-y-3">
@@ -28,9 +33,7 @@ export default function TestSection() {
               ))}
             </ul>
           </div>
-          <p className="text-center mt-2">
-            Eğer isterseniz referanslarımıza göz atabilirsiniz.
-          </p>
+          <p className="text-center mt-2">{t.viewReferenceText}</p>
         </div>
       </main>
     </div>

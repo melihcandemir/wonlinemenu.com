@@ -18,7 +18,7 @@ export default function LanguageSelector() {
     { code: "nl", name: "Nederlands", flag: "NL" },
     { code: "fr", name: "Français", flag: "FR" },
     { code: "it", name: "Italiano", flag: "IT" },
-    { code: "en", name: "English", flag: "GB" },
+    { code: "en", name: "English", flag: "EN" },
   ];
 
   // Seçili dili bul
