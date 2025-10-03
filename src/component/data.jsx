@@ -27,6 +27,7 @@ import ImageModal from "./ImageModal";
 
 import { useLanguage } from "../context/LanguageContext";
 import { accordionTranslations } from "../translations/accordion";
+import { supportAccordionTranslations } from "../translations/supportAccordion";
 
 export const getAccordionItems = () => {
   const { selectedLanguage } = useLanguage();
@@ -367,520 +368,6 @@ export const referanslar = [
   {
     id: 75,
     referans: "urfakebaphauseschweiler.de",
-  },
-];
-
-export const suportAccordionItems = [
-  {
-    title: "Wonlinemenu nedir?",
-    content: (
-      <p className="mb-2">
-        Wonlinemenu (WhatsApp Online Menu), işletmeler için Whatsapp üzerinden
-        sipariş alabileceğiniz kolay e-ticaret yazılımıdır. kolaylıkla
-        ürünlerinizi ekleyebilir ve sipariş alabilirsiniz.
-      </p>
-    ),
-  },
-  {
-    title: "Nasıl kullanabilirim?",
-    content: (
-      <p className="mb-2">
-        Wonlinemenu, Abonelik sistemi ile hizmet vermektedir. Yıllık periyotta
-        ödeme yaparak kullanmaya başlabilirsiniz. Bizimle iletişim kurarak daha
-        fazla detaylı bilgi alabilirsiniz.
-      </p>
-    ),
-  },
-  {
-    title: "Ödemeleri nasıl alacağız?",
-    content: (
-      <>
-        <p className="mb-2">
-          Wonlinemenu üzerinden online ödeme alabilirsiniz. Kontrol panelinden
-          Ödeme yöntemleri belirleyerek müşterilerinize kolaylıklar
-          sağlıyabilirsiniz.
-        </p>
-        <p className="mb-2">
-          Örnek : Kapıda Nakit Ödeme, Kapıda Kredi Kartı, Ticket Restaurant,
-          Sodexo, Multinet, Setcard, Winwin, Metropol, Havale & EFT, Payconiq,
-          Papara gibi..
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "ALPEMIX 7/24 destek alın.",
-    content: (() => {
-      function ImageGrid() {
-        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
-        const images = [
-          { src: img1, alt: "1" },
-          { src: img2, alt: "2" },
-          { src: img3, alt: "3" },
-          { src: img4, alt: "4" },
-        ];
-
-        const handleNext = () => {
-          setSelectedImageIndex((prev) =>
-            prev < images.length - 1 ? prev + 1 : prev
-          );
-        };
-
-        const handlePrev = () => {
-          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        };
-
-        return (
-          <>
-            <p className="mb-2">
-              ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz
-              Servis yazılımıdır.
-            </p>
-            <a
-              href="https://www.alpemix.com/site/AlpemixService.exe"
-              className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
-            >
-              Şimdi indir
-            </a>
-            <p className="mb-2">
-              Görsel olarak kurulum anlatımı :<br />
-              Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak
-              devam edin.
-            </p>
-
-            {/* Resim Grid */}
-            <img
-              src={img1}
-              alt="1"
-              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
-              onClick={() => setSelectedImageIndex(0)}
-            />
-            <hr className="mt-2" />
-
-            <p className="mt-3">
-              Kurulum için karşınıza çıkan bu pencerede Başlat butonuna basın.
-            </p>
-            <img
-              src={img2}
-              alt="2"
-              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
-              onClick={() => setSelectedImageIndex(1)}
-            />
-            <hr className="mt-2" />
-
-            <p className="mt-3">
-              Kuruluma devam etmek için ilk seçili olan seçeneği işaretli
-              bırakarak TAMAM butonuna basın.
-            </p>
-            <img
-              src={img3}
-              alt="3"
-              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
-              onClick={() => setSelectedImageIndex(2)}
-            />
-            <hr className="mt-2" />
-
-            <p className="mt-3">
-              Tebrikler, Destek programınız hazır. <br />
-              Giriş bilgilerinizi{" "}
-              <a
-                href="tel:+905409505454"
-                className="font-medium text-green-600 hover:underline"
-              >
-                WhatsApp
-              </a>{" "}
-              üzerinden bizden isteyebilirsiniz.
-            </p>
-            <img
-              src={img4}
-              alt="4"
-              className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
-              onClick={() => setSelectedImageIndex(3)}
-            />
-
-            <ImageModal
-              isOpen={selectedImageIndex !== null}
-              onClose={() => setSelectedImageIndex(null)}
-              imageSrc={
-                selectedImageIndex !== null
-                  ? images[selectedImageIndex].src
-                  : ""
-              }
-              images={images}
-              currentIndex={selectedImageIndex}
-              onNext={handleNext}
-              onPrev={handlePrev}
-            />
-
-            <hr className="mt-2" />
-            <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
-            <div className="w-75 rounded-lg overflow-hidden mt-2">
-              <iframe
-                className="top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </>
-        );
-      }
-
-      return <ImageGrid />;
-    })(),
-  },
-  {
-    title: "Sadece QR Menu olarak kullanabilir miyim?",
-    content: (
-      <>
-        <p className="mb-2">Wonlinemenu 3 aşamalı bir sipariş sistemidir.</p>
-        <ul className="max-w-md list-disc list-inside">
-          <li>Paket servisi</li>
-          <li>Gel-Al</li>
-          <li>QR Kodu ile Masan sipariş</li>
-        </ul>
-        <p className="mt-2">
-          İstediğiniz özelliği Ayarlar bölümünden kullanmaya açabilir veya
-          kapatabilirsiniz. <br />
-          Sipariş almayı tamamen durdurarak güncel bir menu olarak da
-          wonlinemenu sistemini kullanabilirsiniz.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "Müşteriler bize nasıl ulaşacaklar?",
-    content: (() => {
-      // Component içinde state kullanabilmek için function component yaklaşımı
-      function ImageGrid() {
-        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
-        const images = [
-          { src: imgM1, alt: "1" },
-          { src: imgM2, alt: "2" },
-          { src: imgM3, alt: "3" },
-          { src: imgM4, alt: "4" },
-          { src: imgM5, alt: "5" },
-          { src: imgM6, alt: "6" },
-          { src: imgM7, alt: "7" },
-          { src: imgM8, alt: "8" },
-          { src: imgM9, alt: "9" },
-          { src: imgM10, alt: "10" },
-          { src: imgM11, alt: "11" },
-          { src: imgM12, alt: "12" },
-          { src: imgM13, alt: "13" },
-          { src: imgM14, alt: "14" },
-          { src: imgM15, alt: "15" },
-        ];
-
-        const handleNext = () => {
-          setSelectedImageIndex((prev) =>
-            prev < images.length - 1 ? prev + 1 : prev
-          );
-        };
-
-        const handlePrev = () => {
-          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        };
-
-        return (
-          <>
-            <p className="mb-2">
-              Mağazanız için belirleyeceğiniz size özel linki veya QR
-              kodlarınızı müşterilerinizle paylaşarak, müşterilerinizi
-              mağazanızdan haberdar edebilir, sipariş vermelerini
-              sağlayabilirsiniz veya aşağıda bulunan örnekler gibi sizlere el
-              ilanları hazırlayabiliriz.
-            </p>
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  className="cursor-pointer hover:opacity-90 transition-opacity"
-                  onClick={() => setSelectedImageIndex(index)}
-                />
-              ))}
-            </div>
-            <ImageModal
-              isOpen={selectedImageIndex !== null}
-              onClose={() => setSelectedImageIndex(null)}
-              imageSrc={
-                selectedImageIndex !== null
-                  ? images[selectedImageIndex].src
-                  : ""
-              }
-              images={images}
-              currentIndex={selectedImageIndex}
-              onNext={handleNext}
-              onPrev={handlePrev}
-            />
-          </>
-        );
-      }
-
-      return <ImageGrid />;
-    })(),
-  },
-  {
-    title: "Ürün / Fiyat güncelleme",
-    content: (
-      <>
-        <p>Bu videoda Ürün ekleme ve Düzenlemeyi görüntüleyebilirsiniz.</p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/sbP_Km6hW2w?si=W0duuh-t427RlZFh"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Açılış / Kapanış saat ayarları",
-    content: (
-      <>
-        <p>
-          Sipariş sistemi, İş yerinizin açılış ve kapanış saatlerine göre
-          çalışır. <br />
-          Bu yüzden saatleri doğru girmeniz gerekmektedir. Saat ayarları için
-          lütfen izleyin.
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/lD4KbMii2DM?si=Fz2OMOj0OukECOkb"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Paket servis ayarları",
-    content: (
-      <>
-        <p>
-          Eğer paket servisi kullanıyorsanız, Her şehir için farklı teslimat
-          fiyatı belirleyebilirsiniz. Ayrıca dilerseniz ek olarak servis
-          ücretide ekleyebilirsiniz.
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/89bAq_vsGTk?si=6u8g6bN0jY8ycc8E"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "% indirim ve hediye ayarları",
-    content: (
-      <>
-        <p>
-          Müşterilerinize indirim uygulamak veya belirtmiş olduğunuz limitleri
-          doldurduklarında hediye ürünler vermek istiyorsanız bu bilgi tam size
-          göre...
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/lj5hbXv3Vwk?si=dY59mAEsQLWzr_3e"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Siparişe Kapatma / Açma",
-    content: (
-      <>
-        <p>
-          Sipariş sistemi normalde açılış saatlerine göre açılır ve kapanır.
-          Fakat acil durumlarda sisteminizi tamamen siparişe kapatabilir veya
-          sadece Paket servisine kapatabilirsiniz. Yeniden siparişe açana kadar
-          tamamen kapalı kalacağını unutmayın.
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/yW2bHTi5aGk?si=UG0VrMQXtuCmGp62"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Masadan sipariş ayarları",
-    content: (() => {
-      function ImageGrid() {
-        const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
-        const images = [
-          { src: imgMa1, alt: "1" },
-          { src: imgMa2, alt: "2" },
-          { src: imgMa3, alt: "3" },
-          { src: imgMa4, alt: "4" },
-          { src: imgMa5, alt: "5" },
-        ];
-
-        const handleNext = () => {
-          setSelectedImageIndex((prev) =>
-            prev < images.length - 1 ? prev + 1 : prev
-          );
-        };
-
-        const handlePrev = () => {
-          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        };
-
-        return (
-          <>
-            <p>
-              İşletmenizde bulunan masalarda numaralarınız varsa eğer
-              Müşterileriniz kolaylıkla masadan sipariş verebilir. Bunun için
-              yapmanız gereken ayarı şimdi izleyin.
-            </p>
-            <div className="w-75 rounded-lg overflow-hidden mt-2">
-              <iframe
-                className="top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <hr className="mt-2" />
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  className="cursor-pointer hover:opacity-90 transition-opacity"
-                  onClick={() => setSelectedImageIndex(index)}
-                />
-              ))}
-            </div>
-            <ImageModal
-              isOpen={selectedImageIndex !== null}
-              onClose={() => setSelectedImageIndex(null)}
-              imageSrc={
-                selectedImageIndex !== null
-                  ? images[selectedImageIndex].src
-                  : ""
-              }
-              images={images}
-              currentIndex={selectedImageIndex}
-              onNext={handleNext}
-              onPrev={handlePrev}
-            />
-          </>
-        );
-      }
-
-      return <ImageGrid />;
-    })(),
-  },
-  {
-    title: "Duyuru / Haber yayınlama",
-    content: (
-      <>
-        <p>
-          Acil durum mesajı, Promosyon veya daha farklı bilgilerle Web sitenize
-          giren müşterilerinizi bir mesaj ile karşılamak isterseniz eğer bu
-          video size yardımcı olacaktır.
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/9GVf43XNYpE?si=S_sYYH688jnX_AZN"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Kasa ve Garson Kurulumu",
-    content: (
-      <>
-        <p>
-          İşletmenizde masalardan siparişleri garsonlarınız alıyorsa Web tabanlı
-          kasa panelini bilgisayarınıza kurmanız gerekiyor. Bu video size
-          yardımcı olacaktır.
-        </p>
-        <div className="w-75 rounded-lg overflow-hidden mt-2">
-          <iframe
-            className="top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/3Cd83M0YdOc?si=Nbibc3uxC8H9uS2S"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: "Sorularıma cevap bulamadım. Daha fazla destek istiyorum.",
-    content: (
-      <>
-        <p>
-          Daha fazla desteğe ihtiyacınız varsa WhatsApp üzerinden bizimle
-          iletişim kurabilirsiniz.
-        </p>
-        <p className="mt-2">
-          Türkiye:
-          <a
-            href="https://wa.me/905409505454"
-            className="text-green-600 hover:text-green-700 font-medium"
-            target="_blank"
-          >
-            +90 540 950 54 54
-          </a>
-        </p>
-        <p>
-          Fransa:
-          <a
-            href="https://wa.me/33778563414"
-            className="text-green-600 hover:text-green-700 font-medium"
-            target="_blank"
-          >
-            +33 7 78 56 34 14
-          </a>
-        </p>
-      </>
-    ),
   },
 ];
 
@@ -1247,3 +734,462 @@ export const reviewsData = [
     avatar: "OO",
   },
 ];
+
+export const getSupportAccordionItems = () => {
+  const { selectedLanguage } = useLanguage();
+  const translations = supportAccordionTranslations[selectedLanguage];
+
+  return translations.items.map((item, index) => {
+    let content;
+
+    // İlk item için basit string content
+    if (index === 0) {
+      content = <p className="mb-2">{item.content}</p>;
+    }
+    // İkinci item için basit string content
+    else if (index === 1) {
+      content = <p className="mb-2">{item.content}</p>;
+    }
+    // Üçüncü item için iki paragraf
+    else if (index === 2) {
+      content = (
+        <>
+          <p className="mb-2">{item.content.paragraph1}</p>
+          <p className="mb-2">{item.content.paragraph2}</p>
+        </>
+      );
+    }
+    // ALPEMIX item için karmaşık content
+    else if (index === 3) {
+      content = (() => {
+        function ImageGrid() {
+          const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+          const images = [
+            { src: img1, alt: "1" },
+            { src: img2, alt: "2" },
+            { src: img3, alt: "3" },
+            { src: img4, alt: "4" },
+          ];
+
+          const handleNext = () => {
+            setSelectedImageIndex((prev) =>
+              prev < images.length - 1 ? prev + 1 : prev
+            );
+          };
+
+          const handlePrev = () => {
+            setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+          };
+
+          return (
+            <>
+              <p className="mb-2">{item.content.paragraph1}</p>
+              <a
+                href="https://www.alpemix.com/site/AlpemixService.exe"
+                className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
+              >
+                {item.content.downloadText}
+              </a>
+              <p className="mb-2">
+                {item.content.paragraph2}
+                <br />
+                {item.content.paragraph3}
+              </p>
+
+              {/* Resim Grid */}
+              <img
+                src={img1}
+                alt="1"
+                className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+                onClick={() => setSelectedImageIndex(0)}
+              />
+              <hr className="mt-2" />
+
+              <p className="mt-3">{item.content.paragraph4}</p>
+              <img
+                src={img2}
+                alt="2"
+                className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+                onClick={() => setSelectedImageIndex(1)}
+              />
+              <hr className="mt-2" />
+
+              <p className="mt-3">{item.content.paragraph5}</p>
+              <img
+                src={img3}
+                alt="3"
+                className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+                onClick={() => setSelectedImageIndex(2)}
+              />
+              <hr className="mt-2" />
+
+              <p className="mt-3">
+                {item.content.paragraph6} <br />
+                {item.content.paragraph7}{" "}
+                <a
+                  href="tel:+905409505454"
+                  className="font-medium text-green-600 hover:underline"
+                >
+                  {item.content.whatsappText}
+                </a>{" "}
+                {item.content.paragraph8}
+              </p>
+              <img
+                src={img4}
+                alt="4"
+                className="w-md cursor-pointer hover:opacity-90 transition-opacity mb-4"
+                onClick={() => setSelectedImageIndex(3)}
+              />
+
+              <ImageModal
+                isOpen={selectedImageIndex !== null}
+                onClose={() => setSelectedImageIndex(null)}
+                imageSrc={
+                  selectedImageIndex !== null
+                    ? images[selectedImageIndex].src
+                    : ""
+                }
+                images={images}
+                currentIndex={selectedImageIndex}
+                onNext={handleNext}
+                onPrev={handlePrev}
+              />
+
+              <hr className="mt-2" />
+              <p className="mt-3 font-bold">{item.content.videoTitle}</p>
+              <div className="w-75 rounded-lg overflow-hidden mt-2">
+                <iframe
+                  className="top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </>
+          );
+        }
+
+        return <ImageGrid />;
+      })();
+    }
+    // QR Menu item için liste içeren content
+    else if (index === 4) {
+      content = (
+        <>
+          <p className="mb-2">{item.content.paragraph1}</p>
+          <ul className="max-w-md list-disc list-inside">
+            <li>{item.content.listItem1}</li>
+            <li>{item.content.listItem2}</li>
+            <li>{item.content.listItem3}</li>
+          </ul>
+          <p className="mt-2">
+            {item.content.paragraph2} <br />
+            {item.content.paragraph3}
+          </p>
+        </>
+      );
+    }
+    // Müşteriler item için resim grid
+    else if (index === 5) {
+      content = (() => {
+        function ImageGrid() {
+          const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+          const images = [
+            { src: imgM1, alt: "1" },
+            { src: imgM2, alt: "2" },
+            { src: imgM3, alt: "3" },
+            { src: imgM4, alt: "4" },
+            { src: imgM5, alt: "5" },
+            { src: imgM6, alt: "6" },
+            { src: imgM7, alt: "7" },
+            { src: imgM8, alt: "8" },
+            { src: imgM9, alt: "9" },
+            { src: imgM10, alt: "10" },
+            { src: imgM11, alt: "11" },
+            { src: imgM12, alt: "12" },
+            { src: imgM13, alt: "13" },
+            { src: imgM14, alt: "14" },
+            { src: imgM15, alt: "15" },
+          ];
+
+          const handleNext = () => {
+            setSelectedImageIndex((prev) =>
+              prev < images.length - 1 ? prev + 1 : prev
+            );
+          };
+
+          const handlePrev = () => {
+            setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+          };
+
+          return (
+            <>
+              <p className="mb-2">{item.content}</p>
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className="cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setSelectedImageIndex(index)}
+                  />
+                ))}
+              </div>
+              <ImageModal
+                isOpen={selectedImageIndex !== null}
+                onClose={() => setSelectedImageIndex(null)}
+                imageSrc={
+                  selectedImageIndex !== null
+                    ? images[selectedImageIndex].src
+                    : ""
+                }
+                images={images}
+                currentIndex={selectedImageIndex}
+                onNext={handleNext}
+                onPrev={handlePrev}
+              />
+            </>
+          );
+        }
+
+        return <ImageGrid />;
+      })();
+    }
+    // Video içeren basit item'lar
+    else if (index === 6) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/sbP_Km6hW2w?si=W0duuh-t427RlZFh"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Açılış/Kapanış saat ayarları
+    else if (index === 7) {
+      content = (
+        <>
+          <p>
+            {item.content.paragraph1} <br />
+            {item.content.paragraph2}
+          </p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/lD4KbMii2DM?si=Fz2OMOj0OukECOkb"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Paket servis ayarları
+    else if (index === 8) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/89bAq_vsGTk?si=6u8g6bN0jY8ycc8E"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // % indirim ve hediye ayarları
+    else if (index === 9) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/lj5hbXv3Vwk?si=dY59mAEsQLWzr_3e"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Siparişe Kapatma / Açma
+    else if (index === 10) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/yW2bHTi5aGk?si=UG0VrMQXtuCmGp62"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Masadan sipariş ayarları
+    else if (index === 11) {
+      content = (() => {
+        function ImageGrid() {
+          const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+          const images = [
+            { src: imgMa1, alt: "1" },
+            { src: imgMa2, alt: "2" },
+            { src: imgMa3, alt: "3" },
+            { src: imgMa4, alt: "4" },
+            { src: imgMa5, alt: "5" },
+          ];
+
+          const handleNext = () => {
+            setSelectedImageIndex((prev) =>
+              prev < images.length - 1 ? prev + 1 : prev
+            );
+          };
+
+          const handlePrev = () => {
+            setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+          };
+
+          return (
+            <>
+              <p>{item.content}</p>
+              <div className="w-75 rounded-lg overflow-hidden mt-2">
+                <iframe
+                  className="top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <hr className="mt-2" />
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className="cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setSelectedImageIndex(index)}
+                  />
+                ))}
+              </div>
+              <ImageModal
+                isOpen={selectedImageIndex !== null}
+                onClose={() => setSelectedImageIndex(null)}
+                imageSrc={
+                  selectedImageIndex !== null
+                    ? images[selectedImageIndex].src
+                    : ""
+                }
+                images={images}
+                currentIndex={selectedImageIndex}
+                onNext={handleNext}
+                onPrev={handlePrev}
+              />
+            </>
+          );
+        }
+
+        return <ImageGrid />;
+      })();
+    }
+    // Duyuru / Haber yayınlama
+    else if (index === 12) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/9GVf43XNYpE?si=S_sYYH688jnX_AZN"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Kasa ve Garson Kurulumu
+    else if (index === 13) {
+      content = (
+        <>
+          <p>{item.content}</p>
+          <div className="w-75 rounded-lg overflow-hidden mt-2">
+            <iframe
+              className="top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/3Cd83M0YdOc?si=Nbibc3uxC8H9uS2S"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </>
+      );
+    }
+    // Son item - destek
+    else if (index === 14) {
+      content = (
+        <>
+          <p>{item.content.paragraph1}</p>
+          <p className="mt-2">
+            {item.content.turkeyLabel}
+            <a
+              href="https://wa.me/905409505454"
+              className="text-green-600 hover:text-green-700 font-medium"
+              target="_blank"
+            >
+              +90 540 950 54 54
+            </a>
+          </p>
+          <p>
+            {item.content.franceLabel}
+            <a
+              href="https://wa.me/33778563414"
+              className="text-green-600 hover:text-green-700 font-medium"
+              target="_blank"
+            >
+              +33 7 78 56 34 14
+            </a>
+          </p>
+        </>
+      );
+    }
+
+    return {
+      title: item.title,
+      content: content,
+    };
+  });
+};

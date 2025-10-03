@@ -1,11 +1,12 @@
 import Accordion from "./Accordion";
-import { suportAccordionItems } from "./data";
+import { getSupportAccordionItems } from "./data";
 import { useLanguage } from "../context/LanguageContext";
 import { supportSectionTranslations } from "../translations/supportSection";
 
 export default function SupportSection() {
   const { selectedLanguage } = useLanguage();
   const t = supportSectionTranslations[selectedLanguage];
+  const supportItems = getSupportAccordionItems();
 
   return (
     <div className="w-full">
@@ -18,7 +19,7 @@ export default function SupportSection() {
       <p className="text-sm md:text-xl text-gray-600 mt-5 md:mt-0 mb-3 text-center">
         {t.moreQuestionsInfo}
       </p>
-      <Accordion items={suportAccordionItems} />
+      <Accordion items={supportItems} />
     </div>
   );
 }
