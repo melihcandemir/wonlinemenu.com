@@ -11,6 +11,7 @@ import Footer from "../component/Footer";
 import ScrollTotop from "../component/ScrollTotop";
 import Theme from "../component/Theme";
 import LanguageSelector from "../component/LanguageSelector";
+import WhattsappSection from "../component/WhattsappSection";
 
 export default function Home(props) {
   const { isVisible } = props;
@@ -51,6 +52,7 @@ export default function Home(props) {
 
       <Footer />
       <ScrollTotop />
+      <WhattsappSection />
       <LanguageSelector />
     </>
   );
