@@ -408,70 +408,6 @@ export const suportAccordionItems = [
       </>
     ),
   },
-
-  // {
-  //   title: "ALPEMIX 7/24 destek alın.",
-  //   content: (
-  //     <>
-  //       <p className="mb-2">
-  //         ALPEMIX 7/24 güvenli olarak bağlantı halinde kalabileceğimiz Servis
-  //         yazılımıdır.
-  //       </p>
-  //       <a
-  //         href="https://www.alpemix.com/site/AlpemixService.exe"
-  //         className="cursor-pointer font-medium text-green-600 hover:underline mb-2"
-  //       >
-  //         Şimdi indir
-  //       </a>
-  //       <p className="mb-2">
-  //         Görsel olarak kurulum anlatımı :<br />
-  //         Alpemix dosyasını indirdikten sonra ÇALIŞTIR butonuna basarak devam
-  //         edin.
-  //       </p>
-  //       <img src={img1} alt="1" className="w-md" />
-  //       {/*  */}
-  //       <hr className="mt-2" />
-  //       <p className="mt-3">
-  //         Kurulum için karşınıza çıkan bu pencerede Başlat butonuna basın.
-  //       </p>
-  //       <img src={img2} alt="2" className="w-md" />
-  //       {/*  */}
-  //       <hr className="mt-2" />
-  //       <p className="mt-3">
-  //         Kuruluma devam etmek için ilk seçili olan seçeneği işaretli bırakarak
-  //         TAMAM butonuna basın.
-  //       </p>
-  //       <img src={img3} alt="3" className="w-md" />
-  //       {/*  */}
-  //       <hr className="mt-2" />
-  //       <p className="mt-3">
-  //         Tebrikler, Destek programınız hazır. <br />
-  //         Giriş bilgilerinizi{" "}
-  //         <a
-  //           href="tel:+905409505454"
-  //           className="font-medium text-green-600 hover:underline"
-  //         >
-  //           WhatsApp
-  //         </a>{" "}
-  //         üzerinden bizden isteyebilirsiniz.
-  //       </p>
-  //       <img src={img4} alt="4" className="w-md" />
-  //       {/*  */}
-  //       <hr className="mt-2" />
-  //       <p className="mt-3 font-bold">Video olarak kurulum anlatımı:</p>
-  //       <div className="w-75 rounded-lg overflow-hidden">
-  //         <iframe
-  //           className="top-0 left-0 w-full h-full"
-  //           src="https://www.youtube.com/embed/VDj1tssoFV8?si=cv_jYJO5vmKxd-ql"
-  //           title="YouTube video player"
-  //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  //           referrerPolicy="strict-origin-when-cross-origin"
-  //           allowFullScreen
-  //         ></iframe>
-  //       </div>
-  //     </>
-  //   ),
-  // },
   {
     title: "ALPEMIX 7/24 destek alın.",
     content: (() => {
@@ -615,36 +551,6 @@ export const suportAccordionItems = [
       </>
     ),
   },
-  // {
-  //   title: "Müşteriler bize nasıl ulaşacaklar?",
-  //   content: (
-  //     <>
-  //       <p className="mb-2">
-  //         Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
-  //         müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
-  //         edebilir, sipariş vermelerini sağlayabilirsiniz veya aşağıda bulunan
-  //         örnekler gibi sizlere el ilanları hazırlayabiliriz.
-  //       </p>
-  //       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
-  //         <img src={imgM1} alt="1" />
-  //         <img src={imgM2} alt="2" />
-  //         <img src={imgM3} alt="3" />
-  //         <img src={imgM4} alt="4" />
-  //         <img src={imgM5} alt="5" />
-  //         <img src={imgM6} alt="6" />
-  //         <img src={imgM7} alt="7" />
-  //         <img src={imgM8} alt="8" />
-  //         <img src={imgM9} alt="9" />
-  //         <img src={imgM10} alt="10" />
-  //         <img src={imgM11} alt="11" />
-  //         <img src={imgM12} alt="12" />
-  //         <img src={imgM13} alt="13" />
-  //         <img src={imgM14} alt="14" />
-  //         <img src={imgM15} alt="15" />
-  //       </div>
-  //     </>
-  //   ),
-  // },
   {
     title: "Müşteriler bize nasıl ulaşacaklar?",
     content: (() => {
@@ -828,36 +734,6 @@ export const suportAccordionItems = [
       </>
     ),
   },
-  // {
-  //   title: "Masadan sipariş ayarları",
-  //   content: (
-  //     <>
-  //       <p>
-  //         İşletmenizde bulunan masalarda numaralarınız varsa eğer Müşterileriniz
-  //         kolaylıkla masadan sipariş verebilir. Bunun için yapmanız gereken
-  //         ayarı şimdi izleyin.
-  //       </p>
-  //       <div className="w-75 rounded-lg overflow-hidden mt-2">
-  //         <iframe
-  //           className="top-0 left-0 w-full h-full"
-  //           src="https://www.youtube.com/embed/9GVf43XNYpE?si=tuL3C7fegkV8no2q"
-  //           title="YouTube video player"
-  //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  //           referrerPolicy="strict-origin-when-cross-origin"
-  //           allowFullScreen
-  //         ></iframe>
-  //       </div>
-  //       <hr className="mt-2" />
-  //       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
-  //         <img src={imgMa1} alt="1" />
-  //         <img src={imgMa2} alt="2" />
-  //         <img src={imgMa3} alt="3" />
-  //         <img src={imgMa4} alt="4" />
-  //         <img src={imgMa5} alt="5" />
-  //       </div>
-  //     </>
-  //   ),
-  // },
   {
     title: "Masadan sipariş ayarları",
     content: (() => {
