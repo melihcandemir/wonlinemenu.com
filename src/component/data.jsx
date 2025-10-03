@@ -48,52 +48,6 @@ export const getAccordionItems = () => {
       ),
   }));
 };
-//   {
-//     title: "Ödemeleri nasıl alacağız?",
-//     content: (
-//       <>
-//         <p className="mb-2">
-//           Wonlinemenu üzerinden online ödeme alabilirsiniz. Kontrol panelinden
-//           Ödeme yöntemleri belirleyerek müşterilerinize kolaylıklar
-//           sağlıyabilirsiniz.
-//         </p>
-//         <p className="mb-2">
-//           Örnek : Kapıda Nakit Ödeme, Kapıda Kredi Kartı, Ticket Restaurant,
-//           Sodexo, Multinet, Setcard, Winwin, Metropol, Havale & EFT, Payconiq,
-//           Papara gibi..
-//         </p>
-//       </>
-//     ),
-//   },
-//   {
-//     title: "Siparişlerimi Printerdan yazdırabilir miyim?",
-//     content: (
-//       <>
-//         <p className="mb-2">
-//           Wonlinemenu programını bilgisayarınıza kurduysanız, siparişleriniz
-//           Whatsapp’a düştükten sonra SİPARİŞLER sayfasına geçiş yaparak sipariş
-//           numarasına göre yazdırabilirsiniz.
-//         </p>
-//         <p className="mb-2">
-//           Programı kullanmadan siparişleri yazdırmakda mümkün bunun için bizden
-//           destek alabilirsiniz
-//         </p>
-//       </>
-//     ),
-//   },
-//   {
-//     title: "Müşteriler bize nasıl ulaşacaklar?",
-//     content: (
-//       <>
-//         <p className="mb-2">
-//           Mağazanız için belirleyeceğiniz size özel linki veya QR kodlarınızı
-//           müşterilerinizle paylaşarak, müşterilerinizi mağazanızdan haberdar
-//           edebilir, sipariş vermelerini sağlayabilirsiniz.
-//         </p>
-//       </>
-//     ),
-//   },
-// ];
 
 export const tests = [
   {

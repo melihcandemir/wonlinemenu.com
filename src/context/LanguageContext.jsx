@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 const getInitialLanguage = () => {
   const savedLanguage = localStorage.getItem("selectedLanguage");

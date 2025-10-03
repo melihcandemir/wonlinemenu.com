@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { reviewsData } from "./data";
+import { LanguageContext } from "../context/LanguageContext";
+import { googleReviewsTranslations } from "../translations/googleReviews";
 
 export default function GoogleReviews() {
+  const { selectedLanguage } = useContext(LanguageContext);
+  const t = googleReviewsTranslations[selectedLanguage];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -62,11 +66,11 @@ export default function GoogleReviews() {
         <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center mb-2">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white">
-              Google Yorumları
+              {t.title}
             </h2>
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-lg">
-            Müşterilerimizin deneyimlerini keşfedin
+            {t.subtitle}
           </p>
         </div>
 
@@ -108,7 +112,8 @@ export default function GoogleReviews() {
                 <div className="flex items-center mb-3">
                   {renderStars(review.rating)}
                   <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">
-                    {review.rating}/5
+                    {review.rating}
+                    {t.rating}
                   </span>
                 </div>
 
@@ -203,7 +208,7 @@ export default function GoogleReviews() {
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
             </svg>
-            Google'da Tüm Yorumları Gör
+            {t.viewAllButton}
           </a>
         </div>
       </div>
