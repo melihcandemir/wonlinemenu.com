@@ -24,7 +24,7 @@ export default function Bayi(props) {
       setIsAuthenticated(true);
       setError("");
     } else {
-      setError(t.errorMessage);
+      setError(t.passwordPlaceholder);
       setPassword("");
     }
   };
