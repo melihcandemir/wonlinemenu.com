@@ -20,7 +20,7 @@ export default function WhattsappSection() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             type="button"
-            className="text-white mb-3 me-4 bg-green-600 hover:bg-green-700 rounded-full p-2.5 cursor-pointer transition-all duration-300 hover:scale-110"
+            className="text-white mb-3 me-4 bg-green-600 md:hover:bg-green-700 rounded-full p-2.5 cursor-pointer"
           >
             <svg
               className="w-[40px] h-[40px] text-white"
@@ -46,7 +46,7 @@ export default function WhattsappSection() {
 
           {/* Hover Popup */}
           {isHovered && (
-            <div className="absolute left-full ml-1 top-1/2 transform -translate-y-1/2 bg-slate-500 text-white  px-4 py-2 rounded-lg shadow-lg whitespace-nowrap z-10">
+            <div className="hidden md:block absolute left-full ml-1 top-1/2 transform -translate-y-1/2 bg-slate-500 text-white  px-4 py-2 rounded-lg shadow-lg whitespace-nowrap z-10">
               <div className="relative">{t.popupMessage}</div>
             </div>
           )}
