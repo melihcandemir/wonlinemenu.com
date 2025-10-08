@@ -169,18 +169,19 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-gray-200 mt-8 max-w-7xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:justify-between border-t border-gray-200 mt-8 max-w-7xl mx-auto">
         <p className="text-white text-sm mt-3 px-4">
           © {currentYear}{" "}
           <Link to="/" onClick={scrollToTop} className="text-green-600">
             WonlineMenu
           </Link>
-          . {translations.copyright} <br /> {translations.poweredBy}{" "}
+          . {translations.copyright}
+        </p>
+        <p className="text-white text-sm md:mt-3 px-4">{translations.poweredBy}{" "}
           <a href="https://wa.me/905348324940" className="text-green-600">
             Melih Can Demir
           </a>
-          .
-        </p>
+          .</p>
       </div>
     </footer>
   );
