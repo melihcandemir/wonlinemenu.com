@@ -202,7 +202,7 @@ export const getSupportAccordionItems = () => {
                     key={index}
                     src={image.src}
                     alt={image.alt}
-                    className="cursor-pointer hover:opacity-90 transition-opacity w-full h-55 object-cover rounded"
+                    className="cursor-pointer hover:opacity-90 transition-opacity w-full h-30 md:h-55 object-cover rounded"
                     onClick={() => setSelectedImageIndex(index)}
                   />
                 ))}
@@ -356,7 +356,7 @@ export const getSupportAccordionItems = () => {
                     key={index}
                     src={image.src}
                     alt={image.alt}
-                    className="cursor-pointer hover:opacity-90 transition-opacity w-full h-55 object-cover rounded"
+                    className="cursor-pointer hover:opacity-90 transition-opacity w-full h-30 md:h-55 object-cover rounded"
                     onClick={() => setSelectedImageIndex(index)}
                   />
                 ))}
