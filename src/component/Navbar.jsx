@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import wonlineLogo from "../assets/wonline2023.png";
 import { useLanguage } from "../context/LanguageContext";
@@ -9,6 +9,26 @@ export default function Navbar(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { selectedLanguage } = useLanguage();
   const translations = navbarTranslations[selectedLanguage];
+  const menuRef = useRef(null);
+
+  // Menü dışına tıklandığında menüyü kapat
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Menü açıkken event listener ekle
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup fonksiyonu
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   // Menü açma/kapama fonksiyonu
   const toggleMenu = () => {
@@ -24,9 +44,9 @@ export default function Navbar(props) {
 
   return (
     <div
-      className={`sticky transition-all ${
-        !isVisible ? "top-0" : "top-18"
-      } left-0 w-full bg-white z-40`}
+      ref={menuRef}
+      className={`sticky transition-all ${!isVisible ? "top-0" : "top-18"
+        } left-0 w-full bg-white z-40`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
