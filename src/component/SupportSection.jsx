@@ -1,5 +1,5 @@
 import Accordion from "./Accordion";
-import { getSupportAccordionItems } from "./data";
+import { getSupportAccordionItems } from "./accordionHelpers";
 import { useLanguage } from "../context/LanguageContext";
 import { supportSectionTranslations } from "../translations/supportSection";
 

@@ -1,4 +1,4 @@
-import { referanslar } from "./data";
+import { referanslar } from "../config/referanslar";
 import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { referansSectionTranslations } from "../translations/referansSection";

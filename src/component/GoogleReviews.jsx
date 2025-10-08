@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { reviewsData } from "./data";
+import { reviewsData } from "../config/reviews";
 import { LanguageContext } from "../context/LanguageContext";
 import { googleReviewsTranslations } from "../translations/googleReviews";
 

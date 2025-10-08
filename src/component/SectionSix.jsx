@@ -1,7 +1,7 @@
 import img from "../assets/reklam07.png";
 import { Link } from "react-router-dom";
 import Accordion from "./Accordion";
-import { getAccordionItems } from "./data";
+import { getAccordionItems } from "./accordionHelpers";
 import { useLanguage } from "../context/LanguageContext";
 import { sectionSixTranslations } from "../translations/sectionSix";
 

@@ -1,4 +1,4 @@
-import { tests } from "./data";
+import { tests } from "../config/demoTests";
 import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { testSectionTranslations } from "../translations/testSection";
