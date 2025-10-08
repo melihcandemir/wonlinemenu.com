@@ -68,6 +68,8 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Ana sayfa font düzenlemesi.
 - [+] Videolar küçük kalsın.
 - [+] Destek panelinde bulunan fotoğraflar popup ile açılsın.
+- [+] Google yorumları ekle.
+- [+] Translate ekle.
 
 ### 🔄 Devam Eden Görevler
 
@@ -76,6 +78,4 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 ### 📋 Yapılacaklar
 
 - [ ] Admin paneli temel yapısı
-- [ ] Google yorumları ekle.
-- [ ] Translate ekle.
 - [ ] Dark mode ekle.
