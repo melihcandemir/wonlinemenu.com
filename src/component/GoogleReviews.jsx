@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { reviewsData } from "../config/reviews";
 import { LanguageContext } from "../context/LanguageContext";
 import { googleReviewsTranslations } from "../translations/googleReviews";
@@ -8,6 +8,24 @@ export default function GoogleReviews() {
   const t = googleReviewsTranslations[selectedLanguage];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  // Ekran boyutuna göre kaç yorum gösterileceğini tespit et
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1); // Mobil
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2); // Tablet
+      } else {
+        setVisibleCount(3); // Masaüstü
+      }
+    };
+
+    handleResize(); // İlk yüklemede çalıştır
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Yıldız render fonksiyonu
   const renderStars = (rating) => {
@@ -58,6 +76,9 @@ export default function GoogleReviews() {
   };
 
   const visibleReviews = getVisibleReviews();
+
+  // Toplam sayfa sayısını hesapla
+  const totalPages = Math.ceil(reviewsData.length / visibleCount);
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900 py-12 md:py-16 lg:py-20">
@@ -169,20 +190,20 @@ export default function GoogleReviews() {
 
         {/* Nokta İndikatörleri */}
         <div className="flex justify-center mt-8 space-x-2">
-          {reviewsData.map((_, index) => (
+          {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
               onClick={() => {
                 if (!isAnimating) {
                   setIsAnimating(true);
                   setTimeout(() => {
-                    setCurrentIndex(index);
+                    setCurrentIndex(index * visibleCount);
                     setIsAnimating(false);
                   }, 150);
                 }
               }}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentIndex
+                Math.floor(currentIndex / visibleCount) === index
                   ? "bg-green-600"
                   : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
               }`}
