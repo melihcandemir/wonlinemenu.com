@@ -9,7 +9,7 @@ import Referanslar from "../page/Referanslar";
 import Support from "../page/Support";
 import WGarson from "../page/WGarson";
 import Bayi from "../page/Bayi";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { isVisibleFalse, isVisibleTrue } from "../redux/slice/screenSlice";
 
 export default function RouterConfig() {
