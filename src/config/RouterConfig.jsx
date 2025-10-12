@@ -9,10 +9,13 @@ import Referanslar from "../page/Referanslar";
 import Support from "../page/Support";
 import WGarson from "../page/WGarson";
 import Bayi from "../page/Bayi";
+import { useDispatch, useSelector } from "react-redux";
+import { isVisibleFalse, isVisibleTrue } from "../redux/slice/screenSlice";
 
 export default function RouterConfig() {
   //
-  const [isVisible, setIsVisible] = useState(true);
+  const dispatch = useDispatch();
+  //
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,9 +27,9 @@ export default function RouterConfig() {
     // Scroll kontrolü için
     const handleScroll = () => {
       if (window.scrollY > 50 || isMobile) {
-        setIsVisible(false);
+        dispatch(isVisibleFalse());
       } else {
-        setIsVisible(true);
+        dispatch(isVisibleTrue());
       }
     };
 
@@ -47,19 +50,13 @@ export default function RouterConfig() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home isVisible={isVisible} />} />
-      <Route path="/test-et" element={<TestEt isVisible={isVisible} />} />
-      <Route
-        path="/fiyatlandirma"
-        element={<Pricing isVisible={isVisible} />}
-      />
-      <Route
-        path="/referanslar"
-        element={<Referanslar isVisible={isVisible} />}
-      />
-      <Route path="/destek" element={<Support isVisible={isVisible} />} />
-      <Route path="/wgarson" element={<WGarson isVisible={isVisible} />} />
-      <Route path="/bayi" element={<Bayi isVisible={isVisible} />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/test-et" element={<TestEt />} />
+      <Route path="/fiyatlandirma" element={<Pricing />} />
+      <Route path="/referanslar" element={<Referanslar />} />
+      <Route path="/destek" element={<Support />} />
+      <Route path="/wgarson" element={<WGarson />} />
+      <Route path="/bayi" element={<Bayi />} />
       {/* <Route path="/admin54" element={<Admin />} /> */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

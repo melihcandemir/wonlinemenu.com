@@ -6,13 +6,12 @@ import ReferansSection from "../component/ReferansSection";
 import ScrollTotop from "../component/ScrollTotop";
 import TestSection from "../component/TestSection";
 
-export default function TestEt(props) {
-  const { isVisible } = props;
+export default function TestEt() {
   return (
     <>
       {/* Test Et sayfası içeriği */}
-      <Communication isVisible={isVisible} />
-      <Navbar isVisible={isVisible} />
+      <Communication />
+      <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-25 lg:px-8">
         <TestSection />

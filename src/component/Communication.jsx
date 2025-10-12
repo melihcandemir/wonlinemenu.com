@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux";
 import { useLanguage } from "../context/LanguageContext";
 import { communicationTranslations } from "../translations/communication";
 
-export default function Communication(props) {
-  const { isVisible } = props;
+export default function Communication() {
+  const { isVisible } = useSelector((state) => state.screen);
   const { selectedLanguage } = useLanguage();
   const translations = communicationTranslations[selectedLanguage];
 

@@ -8,8 +8,7 @@ import LanguageSelector from "../component/LanguageSelector";
 import { LanguageContext } from "../context/LanguageContext";
 import { bayiTranslations } from "../translations/bayi";
 
-export default function Bayi(props) {
-  const { isVisible } = props;
+export default function Bayi() {
   const { selectedLanguage } = useContext(LanguageContext);
   const t = bayiTranslations[selectedLanguage];
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,8 +29,8 @@ export default function Bayi(props) {
   };
   return (
     <div className="bg-slate-200">
-      <Communication isVisible={isVisible} />
-      <Navbar isVisible={isVisible} />
+      <Communication />
+      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:pt-25 lg:px-8 mb-10">
         {!isAuthenticated ? (
           <div className="min-h-[50vh] flex items-center justify-center">

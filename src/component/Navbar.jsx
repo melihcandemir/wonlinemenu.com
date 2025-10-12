@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import wonlineLogo from "../assets/wonline2023.png";
 import { useLanguage } from "../context/LanguageContext";
 import { navbarTranslations } from "../translations/navbar";
+import { useSelector } from "react-redux";
 
-export default function Navbar(props) {
-  const { isVisible } = props;
+export default function Navbar() {
+  const { isVisible } = useSelector((state) => state.screen);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { selectedLanguage } = useLanguage();
   const translations = navbarTranslations[selectedLanguage];
@@ -45,8 +46,9 @@ export default function Navbar(props) {
   return (
     <div
       ref={menuRef}
-      className={`sticky transition-all ${!isVisible ? "top-0" : "top-18"
-        } left-0 w-full bg-white z-40`}
+      className={`sticky transition-all ${
+        !isVisible ? "top-0" : "top-18"
+      } left-0 w-full bg-white z-40`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
