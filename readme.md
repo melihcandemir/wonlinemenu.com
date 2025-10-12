@@ -15,10 +15,10 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 ## ✨ Özellikler
 
 - 📱 **Responsive Tasarım** - Tüm cihazlarda mükemmel görünüm
-- 🌙 **Dark/Light Mod** - Kullanıcı tercihine göre tema değişimi
+<!-- - 🌙 **Dark/Light Mod** - Kullanıcı tercihine göre tema değişimi -->
 - ⚡ **Hızlı Performans** - Vite ile optimize edilmiş build sistemi
 - 🎨 **Modern UI/UX** - TailwindCSS ile şık tasarım
-- 🔧 **Admin Paneli** - Menü yönetimi için admin arayüzü
+<!-- - 🔧 **Admin Paneli** - Menü yönetimi için admin arayüzü -->
 - 📊 **Modüler Yapı** - Kolay geliştirme ve bakım
 
 ## 🛠️ Kullanılan Teknolojiler
@@ -27,8 +27,10 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - React 19.1.1
 - TailwindCSS 4.1.13
 - React Router DOM 7.8.2
+- react-dom 19.1.1
 - Vite 7.1.2
 - gh-pages 6.3.0
+- react-redux 9.2.0
 
 ## 🚀 Kurulum ve Kullanım
 
@@ -53,7 +55,7 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 - [+] Proje kurulumu ve temel yapı oluşturma
 - [+] React Router DOM entegrasyonu
 - [+] TailwindCSS kurulumu ve yapılandırması
-- [+] Tema sistemi (Dark/Light mod) implementasyonu
+<!-- - [+] Tema sistemi (Dark/Light mod) implementasyonu -->
 - [+] Githubda projeyi canlıya al
 - [+] Ana sayfa tasarımı
 - [+] Test Et sayfa tasarımı

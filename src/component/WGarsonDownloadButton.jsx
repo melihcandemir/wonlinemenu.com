@@ -1,5 +1,6 @@
 // WGarson uygulama indirme butonu bileşeni
-export const WGarsonDownloadButton = ({ title, url }) => {
+export const WGarsonDownloadButton = (props) => {
+  const { url } = props;
   return (
     <a
       href={url}
