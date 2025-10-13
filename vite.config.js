@@ -7,4 +7,5 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   // base: "/wonlinemenu.com/",
   assetsInclude: ["**/*.zip"], // ZIP dosyalarını asset olarak işle
+  publicDir: "public", // public klasöründeki dosyaları dist'e kopyala
 });
