@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // SVG ikonu için ayrı bir bileşen oluşturmak kodu daha temiz hale getirir.
 const AccordionIcon = ({ isOpen }) => (
@@ -27,11 +27,62 @@ const Accordion = ({ items }) => {
   // Başlangıçta ilk öğe açık olsun diye 0 değerini veriyoruz.
   // Hiçbiri açık olmasın isterseniz `null` yapabilirsiniz.
   const [openIndex, setOpenIndex] = useState(0);
+  const accordionRefs = useRef([]);
+
+  // Sayfa yüklendiğinde URL hash'ini kontrol et
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const itemId = hash.substring(1); // # işaretini kaldır
+      const index = parseInt(itemId.replace('yardim-', ''));
+      if (!isNaN(index) && index >= 0 && index < items.length) {
+        setOpenIndex(index);
+        // Kısa bir gecikme ile scroll yap (DOM'un render olması için)
+        setTimeout(() => {
+          accordionRefs.current[index]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }, 100);
+      }
+    }
+  }, [items.length]);
+
+  // URL hash değişikliklerini dinle
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const itemId = hash.substring(1);
+        const index = parseInt(itemId.replace('yardim-', ''));
+        if (!isNaN(index) && index >= 0 && index < items.length) {
+          setOpenIndex(index);
+          setTimeout(() => {
+            accordionRefs.current[index]?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }, 100);
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [items.length]);
 
   // Bir başlığa tıklandığında çalışacak fonksiyon
   const handleToggle = (index) => {
     // Eğer zaten açık olan başlığa tıklanırsa kapat, değilse yenisini aç.
-    setOpenIndex(openIndex === index ? null : index);
+    const newIndex = openIndex === index ? null : index;
+    setOpenIndex(newIndex);
+    
+    // URL'yi güncelle
+    if (newIndex !== null) {
+      window.history.pushState(null, '', `#yardim-${newIndex}`);
+    } else {
+      window.history.pushState(null, '', window.location.pathname);
+    }
   };
 
   return (
@@ -40,7 +91,11 @@ const Accordion = ({ items }) => {
         const isOpen = openIndex === index;
 
         return (
-          <div key={index}>
+          <div 
+            key={index} 
+            ref={(el) => (accordionRefs.current[index] = el)}
+            id={`soru-${index}`}
+          >
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
