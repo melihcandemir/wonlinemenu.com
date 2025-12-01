@@ -41,6 +41,7 @@ wonlinemenu.com, React ve TailwindCSS kullanılarak geliştirilmiş.
 
 ### Diğer Komutlar
 
+- **Projeyi yüklemek için** `git clone url`
 - **Projeyi tekrar yükledikten sonra** `npm install`
 - **Projeyi localde çaıştırmak için** `npm run dev`
 - **Production build** `npm run build`
