@@ -15,4 +15,9 @@ export const tests = [
     langue: "Français",
     test: "wonline.menu/demo/fr/",
   },
+  {
+    id: 4,
+    langue: "Deutsch",
+    test: "wonline.menu/demo/de/",
+  },
 ];
